@@ -89,13 +89,42 @@ var DebateView = React.createClass({
             <div>
                 <DebateTopic className="debate-title" topic="Arab-Israeli Conflict"/>
                 <DebateInfo className="debate-info" />
+                <div className="debate row">
+                    <Debater side="con" debaterName="Gideon Keyson" votePercent="20%"/>
+                    <Debater side="pro" debaterName="Eden Adler" votePercent="20%"/>
+                </div>
+                <div className="seperate-line"></div>
+            </div>
+        )
+    }
+});
+
+var Debater= React.createClass({
+    render: function(){
+        return(
+            <div>
+                <div className="debater {this.props.side} col-md-4 col-md-offset-2 text-center">
+					<div className="debater-info">
+						<div className="debater-name-side">
+							<span className="debater-name">{this.props.debaterName}</span>
+							<span className="debater-side">{this.props.side}</span>
+						</div>
+						<div className="debater-follow-btn">follow</div>
+					</div>
+
+					<div className="debater-video">
+					<div className="vote-bar"><span className="vote-percent">{this.props.votePercent}</span><div class="vote-bar-fill"></div></div>
+						<img src="assets/placeholder/con-debater.png" alt=""/>
+					</div>
+					<div className="vote-btn">VOTE</div>
+				</div>
             </div>
         )
     }
 });
 
 
-var CommentFeed = React.createClass({
+var ChatFeed = React.createClass({
    sendHandler(message){
        const messageObject = {
            username: this.props.username,
@@ -115,13 +144,39 @@ var CommentFeed = React.createClass({
     },
     render: function(){
         return(
-            <div>
-                <h3>Chat Feed</h3>
-                <Messages messages={this.state.messages}/>
-                <AddMessage onSend={this.sendHandler}/>
+            <div className="debate-chat row">
+                <TopComments/>
+                <div className="chat col-md-2">
+                    <h3>Chat Feed</h3>
+                    <Messages messages={this.state.messages}/>
+                    <AddMessage onSend={this.sendHandler}/>
+                </div>
             </div>
         )
    },
+});
+
+var TopComments = React.createClass({
+   render: function(){
+       return(
+           <div className="top-comments col-md-2 col-md-offset-4">
+                <h3>Top Comments</h3>
+               <TopComment user="Eden Adler" comment="I agree." likes="17"/>
+            </div>
+       )
+   }
+});
+
+var TopComment = React.create({
+   render: function(){
+       return(
+           <div className="comment">
+                <div className="user-name">{this.props.user}</div>
+                <p className="comment-text">{this.props.comment}</p>
+                <div className="likes">{this.props.likes}<i class="fa fa-heart" aria-hidden="true"></i></div>
+            </div>
+       )
+   }
 });
 
 var Messages = React.createClass({
@@ -134,11 +189,12 @@ var Messages = React.createClass({
     render: function() {
         const messages = this.props.messages.map((message, i) => {
             return (
-                <Message key={i} username={message.username} fromMe={message.fromMe}/>
+                <Message key={i} username={message.username} fromMe={message.fromMe} text={message.text} likes="17"/>
             )
         });
         return(
-            <div className="messages" id="messageList">{messages}</div>
+            <div className="chat-feed" id="messageList">{messages}</div>
+
         )
     }
 });
@@ -149,8 +205,9 @@ var Message = React.createClass({
        const fromMe = this.props.fromMe ? 'from-me' : '';
        return (
            <div className={`message ${fromMe}`}>
-               <div>{this.props.username}</div>
-               <div>{this.props.message}</div>
+               <div className="user-name">{this.props.username}</div>
+               <div className="comment-text">{this.props.text}</div>
+               <div className="likes">{this.props.likes}<i className="fa fa-heart" aria-hidden="true"/></div>
            </div>
        )
    }
@@ -175,8 +232,9 @@ var AddMessage = React.createClass({
 
     render: function(){
         return(
-            <form onSubmit={this.submitHandler}>
-                <textarea onChange={this.textChangeHandler} value={this.state.chatInput} placeholder="Add your comment"></textarea>
+            <form className="chat-input" onSubmit={this.submitHandler}>
+                <textarea onChange={this.textChangeHandler} value={this.state.chatInput} placeholder="Share your thoughts..."/>
+                <input type="submit"/>
             </form>
         )
     }
@@ -186,6 +244,8 @@ var AddMessage = React.createClass({
 
 
 ReactDOM.render(
-    <CommentFeed/>,
+    <main>
+        <DebatePage/>
+    </main>
     document.getElementById('root')
-);
+)
