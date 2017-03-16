@@ -1,0 +1,222 @@
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body{
+	font-family: 'Open Sans';
+	font-size: 12px;
+	padding-top: 20px;
+	padding-bottom: 50px
+}
+h1,h2,h3{
+	font-family: 'Franklin-Gothic';
+	text-transform: uppercase;
+}
+h1{
+	margin-top: 10px;
+
+}
+/************ header css****************/
+
+.logo{
+	display: inline;
+}
+header{
+	padding: 0 20px;
+	margin-bottom: 30px;
+}
+nav{
+	float: right;
+	display: inline;
+	font-size:24px;
+	margin-bottom: 50px;
+
+}
+nav li{
+	font-family: 'Franklin-Gothic';
+	text-transform: uppercase;
+	display: inline;
+	margin-left: 20px;
+}
+main{
+	background:#f9f9f9;
+	position: relative;
+}
+/************ debate info css****************/
+
+.debate-title{
+	text-align: center;
+	background-image: linear-gradient(to left, #3f20a2, #6245bc);
+	padding: 10px;
+	color: white;
+	margin-top: -40px;
+	margin-bottom: 10px;
+}
+
+.round-status{
+	font-family: 'Franklin-Gothic';
+	text-transform: uppercase;
+	background-color: white;
+	padding: 5px;
+	display: inline-block;
+	font-size:18px;
+	color:#040404;
+
+}
+.timer{
+	width: 100px;
+    height: 100px;
+    background: white;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+ 	border: solid 6px #4E30AD;
+ 	text-align: center;
+ 	font-size:32px;
+ 	line-height: 80px;
+ 	color: #040404;
+ 	display: inline-block;
+ 	margin-left: 20px;
+	
+ }
+ .viewers{
+ 	background-color: #232323;
+ 	display: inline-block;
+ 	color:white;
+ 	font-family: 'Franklin-Gothic';
+ 	padding: 10px;
+ 	float: right;
+ 	margin-top: 40px;
+ }
+ .debate{
+	margin-top: 30px;
+	margin-bottom: 50px;
+ }
+
+
+/************ debater css****************/
+.debater{
+	position: relative;
+}
+ .debater-name-side{
+ 	text-transform: uppercase;
+ 	display: inline-block;
+ 	background-color: #ffffff;
+	border: solid 1px #4319c5;
+	padding:5px 10px;
+	font-size:20px;
+
+ }
+
+ .debater-name{
+	font-family: 'Franklin-Gothic';
+	margin-right: 5px;
+	vertical-align: middle;
+ }
+ .debater-side{
+ 	vertical-align: middle;
+ }
+ .debater-follow-btn{
+ 	display: inline-block;
+ 	border-radius: 2px;
+	background-color: #232323;
+	color: white;
+	padding: 5px 10px;
+	font-size: 16px;
+	margin-left: 10px;
+ }
+ .debater-video{
+ 	width:280px;
+ 	height: 250px;
+ 	margin:0 auto;
+ 	display: flex;
+ 	align-items: center;
+ 	justify-content: space-around;
+ 	position: relative;
+ }
+ .debater-info{
+ 	margin-bottom: 10px;
+ }
+ .vote-bar{
+ 	height: 232px;
+ 	width: 30px;
+ 	display: inline-block;
+ 	background: white;
+ 	position: absolute;
+	top:10px;
+	left: -50px;
+	color:white;
+	 display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+ }
+ .pro .vote-bar{
+ 	left: 280px;
+ }
+ .vote-bar-fill{
+	background: #6a6a6a;
+	height: 20%;
+	width: 100%;
+	bottom: 0;
+ }
+.vote-btn{
+		border-radius: 2px;
+	background-image: linear-gradient(to left, #422898, #4922c4);
+	display: inline-block;
+	padding:8px 40px;
+	color:white;
+	font-family: 'Franklin-Gothic';
+	font-size: 20px;
+}
+
+
+.seperate-line{
+	width: 100%;
+	height: 5px;
+	opacity: 0.16;
+	background-image: linear-gradient(to left, #564689, #431ac5);
+	position: absolute;
+	left: 0
+}
+.debate-chat{
+	margin-top: 20px;
+	background: white;
+}
+/**********comment css***********/
+.comment{
+	margin-bottom: 10px;
+}
+.user-name{
+	font-family: 'Franklin-Gothic'
+}
+.comment-text{
+	display: inline;
+}
+.likes{
+	display: inline;
+	margin-left: 10px;
+	font-family: 'Franklin-Gothic'
+}
+.likes i{
+	opacity: 0.54;
+	color: #b4b4b4;
+}
+/********chat css**************/
+input[type=submit] {
+    padding:5px 15px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+	border-radius: 2px;
+	background-image: linear-gradient(to left, #422898, #4922c4);
+	color: white;
+}
+.chat textarea{
+	width: 100%;
+    height: 50px;
+    padding-right: 25px;
+    margin: 0;
+    resize: none;
+}
