@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-template",
+  "name": "Debater",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -17,6 +17,8 @@
     "cross-env": "^1.0.8",
     "css-loader": "^0.23.1",
     "expect": "^1.20.1",
+    "express": "^4.15.2",
+    "jquery": "^3.1.1",
     "node-libs-browser": "^1.0.0",
     "node-sass": "^3.8.0",
     "react": "^15.4.2",
@@ -28,6 +30,7 @@
     "redux-promise": "^0.5.3",
     "redux-thunk": "^2.1.0",
     "sass-loader": "^4.0.0",
+    "socket.io": "^1.7.3",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",
     "webpack-dev-middleware": "^1.6.1",
@@ -37,7 +40,8 @@
   "devDependencies": {
     "babel-plugin-react-transform": "^2.0.2",
     "babel-preset-stage-0": "^6.5.0",
-    "react-transform-hmr": "^1.0.4"
+    "react-transform-hmr": "^1.0.4",
+    "source-map-loader": "^0.2.0"
   },
   "description": "![](http://i.imgur.com/DUiL9yn.png)",
   "repository": {

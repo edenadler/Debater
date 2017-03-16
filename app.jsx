@@ -1,18 +1,15 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Test = React.createClass({
-  render:function(){
-    return (<div>Hello world</div>)
-  }
-})
+var Chat = require('./components/chat');
+
 
 
 
 
 ReactDOM.render(
     <div>
-    <Test/>
+    <Chat />
     </div>,
     document.getElementById('root')
 )
