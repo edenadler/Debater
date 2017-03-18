@@ -184,6 +184,11 @@ main{
 	background: white;
 }
 /**********comment css***********/
+.messages{
+	height: 200px;
+	overflow-y: scroll;
+	background: #fdfdfd
+}
 .comment{
 	margin-bottom: 10px;
 }
