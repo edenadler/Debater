@@ -17,6 +17,9 @@ app.get('/', function (req, res) {
 io.on('connection', function(socket) {
 	socket.on('chat message', function(message){
 		io.emit('chat message', message);
+	}); 
+	socket.on('like update', function(messages){
+		io.emit('like update', messages);
 	});    
 });
 
