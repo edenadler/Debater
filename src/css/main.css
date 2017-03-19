@@ -187,7 +187,10 @@ main{
 .messages{
 	height: 200px;
 	overflow-y: scroll;
-	background: #fdfdfd
+	background: #fdfdfd;
+}
+.top-comments .messages{
+	height: 300px;
 }
 .comment{
 	margin-bottom: 10px;
@@ -206,6 +209,10 @@ main{
 .likes i{
 	opacity: 0.54;
 	color: #b4b4b4;
+}
+.likes i:hover{
+	opacity: 1;
+	color: red;
 }
 /********chat css**************/
 input[type=submit] {

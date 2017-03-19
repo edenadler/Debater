@@ -20,7 +20,10 @@ io.on('connection', function(socket) {
 	}); 
 	socket.on('like update', function(messages){
 		io.emit('like update', messages);
-	});    
+	});
+	socket.on('top comment', function(message){
+		io.emit('top comment', message);
+	});       
 });
 
 server.listen(3000, function () {

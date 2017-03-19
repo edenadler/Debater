@@ -1,7 +1,7 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var Chat = require('./components/chat');
+var DebateChat = require('./components/chat');
 
 
 
@@ -9,7 +9,7 @@ var Chat = require('./components/chat');
 
 ReactDOM.render(
     <div>
-    <Chat />
+    <DebateChat />
     </div>,
     document.getElementById('root')
 )
