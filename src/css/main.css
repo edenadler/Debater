@@ -53,7 +53,9 @@ main{
 	margin-top: -40px;
 	margin-bottom: 10px;
 }
-
+.rounds-info{
+	display: inline-block;
+}
 .round-status{
 	font-family: 'Franklin-Gothic';
 	text-transform: uppercase;
@@ -80,7 +82,18 @@ main{
  	margin-left: 20px;
 	
  }
- .viewers{
+ .start-debate{
+ 	background-color: #26A65B;
+ 	display: inline-block;
+ 	color:white;
+ 	font-family: 'Franklin-Gothic';
+ 	padding: 10px;
+ 	margin-top: 40px;
+ 	border-radius: 3px;
+ 	float:right;
+ 	margin-right: 30px;
+ }
+  .viewers{
  	background-color: #232323;
  	display: inline-block;
  	color:white;
