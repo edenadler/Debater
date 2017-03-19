@@ -31,7 +31,7 @@ var DebaterPro = React.createClass({
             <div>
               <div className="debater-info">
                 <div className="debater-name-side">
-                  <span className="debater-name">Eden Adler</span>
+                  <a className="debater-name">Eden Adler</a>
                   <span className="debater-side">Pro</span>
                 </div>
                 <div className="debater-follow-btn" onClick={this.follow}>{this.state.follow}>follow</div>

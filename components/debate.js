@@ -1,16 +1,66 @@
 var React = require('react');
 var io = require("socket.io-client");
-var Rounds = require('../components/rounds');
+var DebateInfo = require('../components/DebateInfo');
 var VotePro = require('../components/votepro');
 var VoteCon = require('../components/votecon');
 var DebaterCon = require('../components/debatercon');
 var DebaterPro = require('../components/debaterpro');
 
 var Debate = React.createClass({
-    getInitialState: function() {
-        return {
-            selections: [false, false]
-        };
+    getInitialState: function(){
+        return{
+            roundTimeLeft:this.props.debateSettings.rounds[0].time,
+            round:1,
+            firstTime:true,
+            selections: [false, false],
+            
+        }
+    },
+    componentDidMount: function(){
+        var socket = io.connect('http://localhost:3000');
+        var self = this;
+        socket.on('start debate', function(){
+        var countDown = setInterval(function(){self.tick(countDown)}, 1000);
+        })
+    },
+    startDebate: function(){
+        var socket = io.connect('http://localhost:3000');
+        socket.emit('start debate')
+    },
+    tick: function(interval){
+        this.setState({
+            roundTimeLeft: this.state.roundTimeLeft - 1,
+            round:1,
+            firstTime:false,
+            selections: this.state.selections
+
+        });
+        if (this.state.roundTimeLeft <0) {
+            clearInterval(interval);
+            if (this.state.firstTime){
+                this.setState({
+                    roundTimeLeft: this.props.debateSettings.rounds[this.state.round-1].time,
+                    round:this.state.round,
+                    firstTime:false,
+                    selections: this.state.selections
+
+                });
+                var self = this
+                var countDown = setInterval(function(){self.tick(countDown)}, 1000);
+
+            }else{
+                this.setState({
+                    roundTimeLeft: this.props.debateSettings.rounds[this.state.round].time,
+                    round:this.state.round + 1,
+
+                });
+            }
+        }   
+        
+            
+
+
+        
     },
     onChildToggle: function(id, selected) {
         var selections = this.state.selections;
@@ -26,6 +76,9 @@ var Debate = React.createClass({
           }
     
         this.setState({
+            roundTimeLeft:this.props.debateSettings.rounds[this.state.round].time,
+            round:this.state.round,
+            firstTime: this.state.firstTime,
             selections: selections
         });
         
@@ -35,10 +88,8 @@ var Debate = React.createClass({
     render: function(){
         return(
             <div>
-              <div className="debate-wrapper container">
-                <div className="debate-title"><h1>THERE SHOULD BE A QUOTA FOR WOMEN IN GOVERNMENT</h1></div>
-                <Rounds/>
-              </div> 
+                <div className="debate-title"><h1>{this.props.debateSettings.topic}</h1></div>
+                <DebateInfo roundTimeLeft = {this.state.roundTimeLeft} startDebate = {this.startDebate}/>
               <div className="debate row">
                 <div className="debater con col-md-4 col-md-offset-2 text-center">
                     <DebaterCon/>
@@ -48,7 +99,7 @@ var Debate = React.createClass({
                     <DebaterPro/>
                     <VotePro id = "0" selected={this.state.selections[0]} onToggle={this.onChildToggle}/>
                 </div>
-              </div>
+                </div>
             </div>
         )
     }

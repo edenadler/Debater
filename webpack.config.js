@@ -34,8 +34,4 @@ module.exports = {
             'process.env.NODE_ENV': JSON.stringify('development')
         })
     ]
-<<<<<<< HEAD
 };
-=======
-};
->>>>>>> 27799acee9d4ad827e51baaa29d7ef0d12e605a4
