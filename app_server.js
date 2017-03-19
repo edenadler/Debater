@@ -28,4 +28,8 @@ io.on('connection', function(socket) {
 
 server.listen(3000, function () {
   console.log('Example app listening on port 3000!');
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 27799acee9d4ad827e51baaa29d7ef0d12e605a4

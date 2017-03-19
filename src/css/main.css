@@ -170,9 +170,12 @@ main{
 	font-size: 20px;
 }
 
+<<<<<<< HEAD
 .disabled{
 	opacity: 0.4;
 }
+=======
+>>>>>>> 27799acee9d4ad827e51baaa29d7ef0d12e605a4
 
 .seperate-line{
 	width: 100%;
@@ -187,6 +190,17 @@ main{
 	background: white;
 }
 /**********comment css***********/
+<<<<<<< HEAD
+=======
+.messages{
+	height: 200px;
+	overflow-y: scroll;
+	background: #fdfdfd;
+}
+.top-comments .messages{
+	height: 300px;
+}
+>>>>>>> 27799acee9d4ad827e51baaa29d7ef0d12e605a4
 .comment{
 	margin-bottom: 10px;
 }
@@ -205,6 +219,13 @@ main{
 	opacity: 0.54;
 	color: #b4b4b4;
 }
+<<<<<<< HEAD
+=======
+.likes i:hover{
+	opacity: 1;
+	color: red;
+}
+>>>>>>> 27799acee9d4ad827e51baaa29d7ef0d12e605a4
 /********chat css**************/
 input[type=submit] {
     padding:5px 15px; 
