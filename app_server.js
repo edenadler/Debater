@@ -11,7 +11,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname+'/src/index.html');
 });
 
-
+var voteTally = [0,0];
 
 
 io.on('connection', function(socket) {
@@ -23,13 +23,23 @@ io.on('connection', function(socket) {
 	});
 	socket.on('top comment', function(message){
 		io.emit('top comment', message);
-	});       
+	});    
+	socket.on('vote0', function(message){
+		if (message === true)
+			voteTally[0] += 1;
+		else
+			voteTally[0] -=1;
+		io.emit('votepro', voteTally[0]);
+	});   
+	socket.on('vote1', function(message){
+		if (message === true)
+			voteTally[1] += 1;
+		else
+			voteTally[1] -=1;
+		io.emit('votecon', voteTally[1]);
+	});   
 });
 
 server.listen(3000, function () {
   console.log('Example app listening on port 3000!');
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 27799acee9d4ad827e51baaa29d7ef0d12e605a4

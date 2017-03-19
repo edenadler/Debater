@@ -9,9 +9,7 @@ var DebateChat = require('./components/chat');
 ReactDOM.render(
 		<div>
 		    <Debate/>
-		</div>,
-    <div>
-    <DebateChat />
-    </div>,
+   		 	<DebateChat />
+   		 </div>,
     document.getElementById('root')
 )
