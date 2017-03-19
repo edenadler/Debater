@@ -18,7 +18,7 @@ componentDidMount: function(){
 			messages:messages,
 			topcomments:self.state.topcomments
 		})
-
+		
 	});
 	socket.on('like update', function(messages){
 		self.setState({

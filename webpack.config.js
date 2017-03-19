@@ -12,13 +12,6 @@ module.exports = {
     resolve:{
         extensions:['','.js','jsx']
     },
-    resolveLoader: {
-    root: path.resolve('Debater', 'node_modules')
-  },
-  output: {
-        path: 'src',
-        filename: 'js/bundle.min.js'
-    },
     module: {
         loaders: [
             {
@@ -31,7 +24,10 @@ module.exports = {
               }
         ]
     },
-    
+    output: {
+        path: 'src',
+        filename: 'js/bundle.min.js'
+    },
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
          new webpack.DefinePlugin({

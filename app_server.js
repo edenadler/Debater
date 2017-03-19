@@ -15,10 +15,15 @@ app.get('/', function (req, res) {
 
 
 io.on('connection', function(socket) {
-    // Use socket to communicate with this particular client only, sending it it's own id
-    socket.emit('welcome', { message: 'Welcome!', id: socket.id });
-
-    socket.on('i am client', console.log);
+	socket.on('chat message', function(message){
+		io.emit('chat message', message);
+	}); 
+	socket.on('like update', function(messages){
+		io.emit('like update', messages);
+	});
+	socket.on('top comment', function(message){
+		io.emit('top comment', message);
+	});       
 });
 
 server.listen(3000, function () {
