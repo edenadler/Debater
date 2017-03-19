@@ -152,4 +152,3 @@ var Chatinput = React.createClass({
 });
 
 module.exports = DebateChat
-
