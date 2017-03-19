@@ -244,4 +244,5 @@ input[type=submit] {
     padding-right: 25px;
     margin: 0;
     resize: none;
+    margin-top: 20px;
 }

@@ -7,7 +7,7 @@ var Rounds = React.createClass({
 		return(
 				<div className = "rounds-info">
 					<div className="round-status">ROUND 1: introduction</div>
-					<div className="timer">40</div>
+					<div className="timer">{this.props.roundTimeLeft}</div>
 				</div>
 			)
 	}

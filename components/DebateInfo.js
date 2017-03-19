@@ -7,9 +7,9 @@ var DebateInfo = React.createClass({
 	render:function(){
 		return(
 		<div className = "debate-info">
-		<Rounds />
+		<Rounds roundTimeLeft = {this.props.roundTimeLeft}/>
 		<Viewers />
-		<Controls />
+		<Controls startDebate = {this.props.startDebate}/>
 		
 		</div>
 		)
@@ -27,7 +27,7 @@ var Viewers = React.createClass({
 var Controls = React.createClass({
 	render:function(){
 		return(
-			<div className="start-debate">Start Debate</div>
+			<div onClick = {this.props.startDebate} className="start-debate">Start Debate</div>
 			)
 	
 	}

@@ -15,6 +15,9 @@ app.get('/', function (req, res) {
 
 
 io.on('connection', function(socket) {
+	socket.on('start debate', function(){
+		io.emit('start debate');
+	}); 
 	socket.on('chat message', function(message){
 		io.emit('chat message', message);
 	}); 
