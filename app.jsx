@@ -1,18 +1,13 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-
-var Test = React.createClass({
-  render:function(){
-    return (<div>Hello world</div>)
-  }
-})
+var Debate = require('./components/debate');
 
 
 
 
 ReactDOM.render(
-    <div>
-    <Test/>
-    </div>,
+		<div>
+		    <Debate/>
+		</div>,
     document.getElementById('root')
 )

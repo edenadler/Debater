@@ -170,6 +170,9 @@ main{
 	font-size: 20px;
 }
 
+.disabled{
+	opacity: 0.4;
+}
 
 .seperate-line{
 	width: 100%;
