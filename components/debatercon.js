@@ -1,7 +1,6 @@
 var React = require('react');
 var io = require("socket.io-client");
 var $ = require('jquery');
-var ReactTooltip = require('react-tooltip');
 
 var DebaterCon = React.createClass({
     getInitialState: function() {
@@ -33,10 +32,6 @@ var DebaterCon = React.createClass({
               <div className="debater-info">
                 <div className="debater-name-side">
                   <a className="debater-name" data-tip data-for="tooltip-con">Gideon Keyson</a>
-                  <ReactTooltip class="name-tooltip" id="tooltip-con" aria-haspopup="true" place="left">
-                    <p className="tooltip-title"><i className="fa fa-user-circle icon" aria-hidden="true"></i>Gideon Keyson</p>
-                    <p className="tooltip-map"><i className="fa fa-globe icon" aria-hidden="true">Amsterdam, The Netherlands</i></p>
-                  </ReactTooltip>
                   <span className="debater-side">CON</span>
                 </div>
                 <button className="debater-follow-btn" key ="2" onClick={this.follow}>{this.state.follow}</button>

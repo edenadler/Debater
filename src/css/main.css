@@ -39,7 +39,7 @@ nav li{
 	display: inline;
 	margin-left: 20px;
 }
-main{
+.main{
 	background:#f9f9f9;
 	position: relative;
 }
@@ -130,6 +130,7 @@ main{
  	border-radius: 3px;
  	float:right;
  	margin-right: 30px;
+ 	cursor: pointer;
  }
   .viewers{
  	background-color: #232323;
@@ -240,15 +241,14 @@ main{
 	transition: 0.5s all ease-in-out;
  }
 .vote-btn{
-		border-radius: 2px;
-		height: 40px;
-		width: 70px;
+	border-radius: 3px;
 	background-image: linear-gradient(to left, #422898, #4922c4);
 	display: inline-block;
 	padding:8px 40px;
 	color:white;
 	font-family: 'Franklin-Gothic';
 	font-size: 20px;
+	border: none;
 }
 .disabled{
 	opacity: 0.4;

@@ -1,7 +1,6 @@
 var React = require('react');
 var io = require('socket.io-client');
 var $ = require('jquery');
-var ReactTooltip = require('react-tooltip');
 
 var DebaterPro = React.createClass({
     getInitialState: function() {
@@ -33,10 +32,6 @@ var DebaterPro = React.createClass({
               <div className="debater-info">
                 <div className="debater-name-side">
                   <a className="debater-name" data-tip data-for="tooltip-pro">Eden Adler</a>
-                  <ReactTooltip id="tooltip-pro" aria-haspopup="true" place="right">
-                    <p>This is a global react component tooltip</p>
-                    <p>You can put every thing here</p>
-                  </ReactTooltip>
                   <span className="debater-side">Pro</span>
                 </div>
                 <div className="debater-follow-btn" key ="1" onClick={this.follow}>{this.state.follow}</div>
