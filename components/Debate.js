@@ -36,62 +36,62 @@ var Debate = React.createClass({
 
 
 	    },function(){
-	    	if (this.state.roundTimeLeft <0) {
-	    	clearInterval(interval);
-	    	if (this.state.firstTime){ //secondtime current round
-				this.setState({
-	    			roundTimeLeft: this.props.debateSettings.rounds[this.state.round-1].time,
-	    			round:this.state.round,
-	    			firstTime:false,
-					event:this.state.event
+	    	if (this.state.roundTimeLeft <0) { //round "segment" finished eg: timer under 0	
+		    	clearInterval(interval);
+		    	if (this.state.firstTime){ //secondtime current round
+					this.setState({
+		    			roundTimeLeft: this.props.debateSettings.rounds[this.state.round-1].time,
+		    			round:this.state.round,
+		    			firstTime:false,
+						event:this.state.event
 
-	    		},function(){
-	    			var self = this
-	    		var countDown = setInterval(function(){self.tick(countDown)}, 1000);
-	    		});
-	    		
+		    		},function(){
+		    			var self = this
+		    		var countDown = setInterval(function(){self.tick(countDown)}, 1000);
+		    		});
+		    		
 
-	    	}
-	    
-	    	else{ //next round
-	    		if (this.state.round == this.props.debateSettings.rounds.length){
-	    			this.setState({
-	    				finsihed:true,
-	    				roundTimeLeft:0,
-	    				event:"Debate finished"
-	    			})
-	    			return
-	    		}
-	    		$(".next-round").css("visibility", "visible")
-				$(".next-round .time-left").addClass("start-ticking")
-				$(".round-status").addClass('one-pop');
-				setTimeout(function(){$(".round-status").removeClass('one-pop')},2000)
+		    	}
+		    
+		    	else{ //next round
+		    		if (this.state.round == this.props.debateSettings.rounds.length){
+		    			this.setState({
+		    				finsihed:true,
+		    				roundTimeLeft:0,
+		    				event:"Debate finished"
+		    			})
+		    			return
+		    		}
+		    		$(".next-round").css("visibility", "visible")
+					$(".next-round .time-left").addClass("start-ticking")
+					$(".round-status").addClass('one-pop');
+					setTimeout(function(){$(".round-status").removeClass('one-pop')},2000)
 
-	    		this.setState({ 
-	    			roundTimeLeft: this.props.debateSettings.rounds[this.state.round].time,
-	    			event:this.props.debateSettings.rounds[this.state.round].event,
-	    			round:this.state.round + 1,
-					firstTime:true,
-					timeUntilNextRound:5
-	    		},function(){
-	    			var self = this
+		    		this.setState({  //set state for next round
+		    			roundTimeLeft: this.props.debateSettings.rounds[this.state.round].time,
+		    			event:this.props.debateSettings.rounds[this.state.round].event,
+		    			round:this.state.round + 1,
+						firstTime:true,
+						timeUntilNextRound:5
+		    		},function(){
+		    			var self = this
 
-					var countDown = setInterval(function(){
-						self.setState({
-							timeUntilNextRound:self.state.timeUntilNextRound-1
-	    					},function(){
-	    						if (self.state.timeUntilNextRound === 0) {
-	    								clearInterval(countDown);
-	    								$(".next-round").css("visibility", "hidden");
-										$(".next-round .time-left").removeClass("start-ticking");
-										var countDown = setInterval(function(){self.tick(countDown)}, 1000);
-	    							}
-	    						})
+						var countDown = setInterval(function(){ // time until next round
+							self.setState({
+								timeUntilNextRound:self.state.timeUntilNextRound-1
+		    					},function(){
+		    						if (self.state.timeUntilNextRound === 0) { //actual next round starting
+		    								clearInterval(countDown);
+		    								$(".next-round").css("visibility", "hidden");
+											$(".next-round .time-left").removeClass("start-ticking");
+											var countDown = setInterval(function(){self.tick(countDown)}, 1000);
+		    							}
+		    						})
 
-					},1000)
-	    		}); //set state for next round
-	    	} //next round 
-		} //round "segment" finished eg: time under 0	
+						},1000) // time until next round
+		    		}); //set state for next round
+		    	} //next round 
+		} //round "segment" finished eg: timer under 0	
 	}); //initial countdown
 	}, //function "tick" closing
 	render:function(){
