@@ -53,10 +53,7 @@ main{
 	margin-top: -40px;
 	margin-bottom: 10px;
 }
-<<<<<<< HEAD
-.rounds-info{
-	display: inline-block;
-=======
+
 .debate-info{
 	display: flex;
 	justify-content: space-between;
@@ -92,7 +89,7 @@ main{
     0%   {transform: scale(1);}
     50%  {transform: scale(5);;}
     100% {transform: scale(1);;}
->>>>>>> Gideon
+
 }
 
 .round-status{
