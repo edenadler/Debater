@@ -53,6 +53,9 @@ main{
 	margin-top: -40px;
 	margin-bottom: 10px;
 }
+.rounds-info{
+	display: inline-block;
+}
 
 .round-status{
 	font-family: 'Franklin-Gothic';
@@ -113,7 +116,33 @@ main{
 	font-family: 'Franklin-Gothic';
 	margin-right: 5px;
 	vertical-align: middle;
+	cursor: pointer;
  }
+
+ .debater-name:hover{
+ 	text-decoration: none;
+ 	color: #6245bc;
+ }
+
+ .name-tooltip{
+ 	text-align: left;
+ 	font-family: 'Open Sans';
+ 	
+ }
+
+ .tooltip-title{
+ 	font-size: 14px;
+ }
+
+ .icon{
+ 	padding-right: 10px;
+ }
+
+ .tooltip-map{
+ 	text-align: left;
+ 	font-family: 'Open Sans';
+ }
+
  .debater-side{
  	vertical-align: middle;
  }
@@ -125,6 +154,7 @@ main{
 	padding: 5px 10px;
 	font-size: 16px;
 	margin-left: 10px;
+	cursor: pointer;
  }
  .debater-video{
  	width:280px;
@@ -159,9 +189,12 @@ main{
 	height: 20%;
 	width: 100%;
 	bottom: 0;
+	transition: 0.5s all ease-in-out;
  }
 .vote-btn{
 		border-radius: 2px;
+		height: 40px;
+		width: 70px;
 	background-image: linear-gradient(to left, #422898, #4922c4);
 	display: inline-block;
 	padding:8px 40px;
@@ -169,7 +202,9 @@ main{
 	font-family: 'Franklin-Gothic';
 	font-size: 20px;
 }
-
+.disabled{
+	opacity: 0.4;
+}
 
 .seperate-line{
 	width: 100%;

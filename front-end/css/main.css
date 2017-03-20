@@ -169,7 +169,13 @@ main{
 	font-family: 'Franklin-Gothic';
 	font-size: 20px;
 }
+<<<<<<< HEAD
+.disabled{
+	opacity: 0.4;
+}
+=======
 
+>>>>>>> 27799acee9d4ad827e51baaa29d7ef0d12e605a4
 
 .seperate-line{
 	width: 100%;
