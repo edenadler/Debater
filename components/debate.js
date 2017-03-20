@@ -5,6 +5,7 @@ var VotePro = require('../components/votepro');
 var VoteCon = require('../components/votecon');
 var DebaterCon = require('../components/debatercon');
 var DebaterPro = require('../components/debaterpro');
+var ReactTooltip = require('react-tooltip');
 
 var Debate = React.createClass({
     getInitialState: function(){
@@ -82,7 +83,7 @@ var Debate = React.createClass({
             selections: selections
         });
         
-        socket.emit('vote'+id, selections[id]);
+        socket.emit('vote', selections);
     },
 
     render: function(){
