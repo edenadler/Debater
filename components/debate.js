@@ -14,6 +14,7 @@ var Debate = React.createClass({
             round:1,
             firstTime:true,
             selections: [false, false],
+            firstVote: true,
             
         }
     },
@@ -33,7 +34,8 @@ var Debate = React.createClass({
             roundTimeLeft: this.state.roundTimeLeft - 1,
             round:1,
             firstTime:false,
-            selections: this.state.selections
+            selections: this.state.selections,
+            firstVote: this.state.firstVote
 
         });
         if (this.state.roundTimeLeft <0) {
@@ -43,7 +45,8 @@ var Debate = React.createClass({
                     roundTimeLeft: this.props.debateSettings.rounds[this.state.round-1].time,
                     round:this.state.round,
                     firstTime:false,
-                    selections: this.state.selections
+                    selections: this.state.selections,
+                    firstVote: this.state.firstVote
 
                 });
                 var self = this
@@ -53,7 +56,9 @@ var Debate = React.createClass({
                 this.setState({
                     roundTimeLeft: this.props.debateSettings.rounds[this.state.round].time,
                     round:this.state.round + 1,
-
+                    firstTime:false,
+                    selections: this.state.selections,
+                    firstVote: this.state.firstVote
                 });
             }
         }   
@@ -76,14 +81,16 @@ var Debate = React.createClass({
             selections[0] = !selected;
           }
     
+        socket.emit('vote', {selections: selections, first: this.state.firstVote});
+
         this.setState({
             roundTimeLeft:this.props.debateSettings.rounds[this.state.round].time,
             round:this.state.round,
             firstTime: this.state.firstTime,
-            selections: selections
+            selections: selections,
+            firstVote: false
         });
         
-        socket.emit('vote', selections);
     },
 
     render: function(){

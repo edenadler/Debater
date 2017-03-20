@@ -39,7 +39,7 @@ var DebaterCon = React.createClass({
                   </ReactTooltip>
                   <span className="debater-side">CON</span>
                 </div>
-                <button className="debater-follow-btn" key ="2" onClick={this.follow}></button>
+                <button className="debater-follow-btn" key ="2" onClick={this.follow}>{this.state.follow}</button>
               </div>
               <div className="debater-video">
                 <div className="vote-bar"><span className="vote-percent"></span><div className="vote-bar-fill" style={{height: percentage}}></div></div>
