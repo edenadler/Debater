@@ -53,8 +53,46 @@ main{
 	margin-top: -40px;
 	margin-bottom: 10px;
 }
+<<<<<<< HEAD
 .rounds-info{
 	display: inline-block;
+=======
+.debate-info{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.next-round{
+	font-family: 'Franklin-Gothic';
+	text-transform: uppercase;
+	font-size: 18px;
+	position: relative;
+	visibility: hidden;
+}
+.start-ticking{
+	animation: nextround 1s ease-in-out 5;
+}
+.one-pop{
+	animation: onepop 1s ease-in-out 1
+}
+@keyframes onepop {
+    0%   {transform: scale(1);}
+    50%  {transform: scale(2);;}
+    100% {transform: scale(1);;}
+}
+
+.next-round .time-left{
+	color:red;
+	
+	position: absolute;
+	right:-20px;
+	top:0px;
+}
+@keyframes nextround {
+    0%   {transform: scale(1);}
+    50%  {transform: scale(5);;}
+    100% {transform: scale(1);;}
+>>>>>>> Gideon
 }
 
 .round-status{
@@ -78,12 +116,25 @@ main{
  	text-align: center;
  	font-size:32px;
  	line-height: 80px;
- 	color: #040404;
- 	display: inline-block;
- 	margin-left: 20px;
+ 	color: #040404; 
+	margin: 0 auto;
 	
  }
- .viewers{
+ .viewers-controls{
+ 	width: 210px;
+ }
+ .start-debate{
+ 	background-color: #26A65B;
+ 	display: inline-block;
+ 	color:white;
+ 	font-family: 'Franklin-Gothic';
+ 	padding: 10px;
+ 	margin-top: 40px;
+ 	border-radius: 3px;
+ 	float:right;
+ 	margin-right: 30px;
+ }
+  .viewers{
  	background-color: #232323;
  	display: inline-block;
  	color:white;
@@ -266,4 +317,5 @@ input[type=submit] {
     padding-right: 25px;
     margin: 0;
     resize: none;
+    margin-top: 20px;
 }
