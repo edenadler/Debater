@@ -7,10 +7,12 @@ var DebateInfo = React.createClass({
 	render:function(){
 		return(
 		<div className = "debate-info">
-		<Rounds roundTimeLeft = {this.props.roundTimeLeft}/>
+		<div className="next-round">NEXT ROUND STARTS IN <span className="time-left">{this.props.timeUntilNextRound}</span></div>
+		<Rounds roundTimeLeft = {this.props.roundTimeLeft} round = {this.props.round} event = {this.props.event}/>
+		<div className ="viewers-controls">
 		<Viewers />
 		<Controls startDebate = {this.props.startDebate}/>
-		
+		</div>
 		</div>
 		)
 	}
