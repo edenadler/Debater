@@ -2,7 +2,7 @@ var React = require('react');
 var ReactDOM = require('react-dom');
 var Debate = require('./components/Debate');
 var DebateChat = require('./components/chat');
-var Header = require('./components/header');
+var Header = require('./components/header')
 
 var round1 = {
 	round: 1,
@@ -35,7 +35,7 @@ var pro = {
 	location: "Michigan, USA", 
 	level: "Debater",
 	followers: "30.2k"
-};
+}
 
 var con = {
 	name: "Gideon Keyson",
@@ -43,7 +43,7 @@ var con = {
 	location: "Amsterdam, The Netherlands",
 	level: "Debater",
 	followers: "29.4k"
-};
+}
 
 
 
