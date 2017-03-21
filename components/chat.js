@@ -58,7 +58,7 @@ sendMessage: function(event){
 	event.preventDefault();
 	 $('.chat .messages').animate({
  	 scrollTop: $('.chat .messages').get(0).scrollHeight}, 500);
-	var socket = io.connect('http://localhost:3000');
+	var socket = io.connect();
 	var messageText = $(".chat textarea").val();
 	var message = {
 		text:messageText,
