@@ -1,6 +1,10 @@
 var React = require('react');
 var io = require('socket.io-client');
 var $ = require('jquery');
+var DebaterVideoCon = require('../components/DebaterVideoCon');
+var DebaterVideoPro = require('../components/DebaterVideoPro');
+
+
 
 var Debater = React.createClass({
     getInitialState: function() {
@@ -26,9 +30,29 @@ var Debater = React.createClass({
         })
     },
     render: function(){
-      console.log(this.state.percent);
-      console.log(this.props.index);
-      console.log(this.state.percent[this.props.index]);
+
+      var percentage = this.state.percent + '%';
+      var currentlyDebating = false;
+      var nobodyDebating = false
+      var videoWidth = 150;
+      if(this.props.currentDebater == this.props.side){
+        currentlyDebating = true
+      }
+      else if (this.props.currentDebater == "none"){
+        nobodyDebating = true
+      }
+      else{
+        currentlyDebating = false
+      }
+      if(currentlyDebating){
+        videoWidth = 250
+      }
+      else if (nobodyDebating){
+        videoWidth = 180
+      }
+      else {
+        videoWidth = 150
+      }
         return(
             <div>
               <div className="debater-info">
@@ -46,8 +70,12 @@ var Debater = React.createClass({
                 <div className="debater-follow-btn" key ={this.props.index} onClick={this.follow}>{this.state.follow[this.props.index]}</div>
               </div>
               <div className="debater-video">
-                <div className="vote-bar"><span className="vote-percent"></span><div className="vote-bar-fill" style={{height: this.state.percent[parseInt(this.props.index)]+"%"}}></div></div>
-                  <img src={"assets/placeholder/"+this.props.side+"-debater.png"} alt=""></img>
+
+                 <div className="vote-bar"><span className="vote-percent"></span><div className="vote-bar-fill" style={{height: this.state.percent[parseInt(this.props.index)]+"%"}}></div></div>
+                    {this.props.side =="con" ? <DebaterVideoCon videoWidth ={videoWidth}/> :<DebaterVideoPro videoWidth = {videoWidth} /> }
+                
+                  {/*<img style={{width: videoWidth + "px"}} src={"assets/placeholder/"+this.props.side+"-debater.png"} alt=""></img>*/}
+
               </div>
             </div>
         )

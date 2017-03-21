@@ -1,6 +1,10 @@
 var React = require('react');
 var io = require("socket.io-client");
 var $ = require('jquery');
+
+var serverURL = "http://localhost:3000";
+
+
 var DebateChat = React.createClass({
 getInitialState: function(){
 	return{
@@ -9,7 +13,7 @@ getInitialState: function(){
 	}
 },
 componentDidMount: function(){
-	var socket = io.connect('http://localhost:3000');
+	var socket = io.connect(serverURL);
 	var self = this;
 	socket.on('chat message', function(message) {
 		var messages = self.state.messages;
@@ -37,7 +41,7 @@ componentDidMount: function(){
 },
 
 handleUpdateLikes:function(index){
-	var socket = io.connect('http://localhost:3000');
+	var socket = io.connect(serverURL);
 	var messages = this.state.messages;
 	messages[index].likes +=1;
 	socket.emit('like update', messages);
@@ -85,7 +89,7 @@ var TopComments = React.createClass({
 				)
 		})
 		return(
-			<div className="top-comments col-md-2 col-md-offset-4">
+			<div className="top-comments col-md-3 col-md-offset-2">
 			<h3>Top Comments</h3>
 			<div className="messages">
 			{ messages_list }
@@ -97,7 +101,7 @@ var TopComments = React.createClass({
 var Chat = React.createClass({
 	render:function(){
 		return(
-			<div  className = 'chat col-md-2'>
+			<div  className = 'chat col-md-3'>
 			<Chatfeed messages = {this.props.messages} handleUpdateLikes = {this.props.handleUpdateLikes}  />
 			<Chatinput sendMessage = {this.props.sendMessage}/>
 			</div>
