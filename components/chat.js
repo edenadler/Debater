@@ -2,7 +2,7 @@ var React = require('react');
 var io = require("socket.io-client");
 var $ = require('jquery');
 
-var serverURL = "http://localhost:3000";
+var serverURL = "http://localhost:9057";
 
 
 var DebateChat = React.createClass({
