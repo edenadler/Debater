@@ -2,106 +2,84 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Debater</title>
+	<title>Debater:Home</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> <!-- bootstrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- fontawesome -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link rel="stylesheet" href="css/fonts.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/mainpage.css">
+
 
 </head>
 <body>
-	<header class="clearfix">
+		<header class="clearfix">
 		<div class="logo">
 			<img src="assets/placeholder/logo.png" alt="">
 		</div>
+		<div class="search-container">
+		<div class="search">
+			<h1>SEARCH BY TOPIC OR DEBATERS</h1>
+			<i class="fa fa-search" aria-hidden="true"></i>
+		</div>
 		<nav>
 			<ul>
+				<li>Debates</li>
+				<li>Debaters</li>
 				<li>Log in</li>
-				<li>Sign up</li>
+				<li>SIgn up</li>
 			</ul>
 		</nav>
+		</div>
 	</header>
-	<main>
-		<div class="debate-wrapper container">
-			<div class="debate-title"><h1>THERE SHOULD BE A QUOTA FOR WOMEN IN GOVERNMENT</h1></div>
-			<div class="debate-info">
-				<div class="round-status">ROUND 1: introduction</div>
-				<div class="timer">40</div>
-				<div class="viewers">4000 viewers</div>
-			</div>
-			<div class="debate row">
-				<div class="debater con col-md-4 col-md-offset-1 text-center">
-					<div class="debater-info">
-						<div class="debater-name-side">
-							<span class="debater-name">Gideon Keyson</span>
-							<span class="debater-side">CON</span>
-						</div>
-						<div class="debater-follow-btn">follow</div>
-					</div>
-					
-					<div class="debater-video">
-					<div class="vote-bar"><span class="vote-percent">20%</span><div class="vote-bar-fill"></div></div>
-						<img src="assets/placeholder/con-debater.png" alt="">
-					</div>
-					<div class="vote-btn">VOTE</div>
-				</div>
-				<div class="col-md-1">
-					<div class="spinner">
-	  				<div class="sand"></div>
-					</div>
-					</div>
-				<div class="debater pro col-md-4 text-center">
-					<div class="debater-info">
-						<div class="debater-name-side">
-							<span class="debater-name">Eden Adler</span>
-							<span class="debater-side">Pro</span>
-						</div>
-						<div class="debater-follow-btn">follow</div>
-					</div>
-					<div class="debater-video">
-						<div class="vote-bar"><span class="vote-percent">20%</span><div class="vote-bar-fill"></div></div>
-							<img src="assets/placeholder/pro-debater.png" alt="">
-					</div>
-					<div class="vote-btn">VOTE</div>
-				</div>
+	<div class="hero">
+	</div>
+	<div class="container">
+	<div class="topdebate">
+		<h3>Top Debates</h3>
+		<div class="row">
+		<div class="card-container col-md-3">
+		<div class="debate-card">
+			<div class="debate-topic">THE TWO STATE SOLUTION IS OUTDATED</div>
+			<div class="live">LIVE</div>
+			<div class="debate-card-info">
+				<span>790 viewers</span><br>
+				<span>Two days ago</span>
 			</div>
 		</div>
-	</main>
-			<div class="seperate-line"></div>
-
-			<div class="debate-chat row">
-				<div class="top-comments col-md-2 col-md-offset-4">
-					<h3>Top Comments</h3>
-					<div class="comment">
-						<div class="user-name">Eden Adler</div>
-						<p class="comment-text">I totally agree with Barack</p>
-						<div class="likes">17 <i class="fa fa-heart" aria-hidden="true"></i></div>
-					</div>
-					<div class="comment">
-						<div class="user-name">Eden Adler</div>
-						<p class="comment-text">I totally agree with Barack</p>
-						<div class="likes">17 <i class="fa fa-heart" aria-hidden="true"></i></div>
-					</div>
-				</div>
-				<div class="chat col-md-2">
-				<h3>Free Chat</h3>
-				<div class="chat-feed">
-					<div class="comment">
-						<div class="user-name">Eden Adler</div>
-						<p class="comment-text">I totally agree with Barack</p>
-						<div class="likes">17 <i class="fa fa-heart" aria-hidden="true"></i></div>
-					</div>
-				</div>
-				<form action="" class="chat-input">
-					<textarea name="" id="" placeholder="Write your thoughts..."></textarea>
-					<input type="submit">
-				</form>
-					
-				</div>
+		</div>
+		<div class="card-container col-md-3">
+		<div class="debate-card">
+			<div class="debate-topic">WEED should be legalised</div>
+<!-- 			<div class="live">LIVE</div>
+ -->			<div class="debate-info">
+				<span>1034 viewers</span><br>
+				<span>A week ago</span>
 			</div>
+		</div>
+		</div>
+		<div class="card-container col-md-3">
+		<div class="debate-card">
+			<div class="debate-topic">The EU is finished</div>
+			<!-- div class="live">LIVE</div> -->
+			<div class="debate-info">
+				<span>500 viewers</span><br>
+				<span>NOW</span>
+			</div>
+		</div>
+		</div>
+		<div class="card-container col-md-3">
+		<div class="debate-card">
+			<div class="debate-topic">Trump's ban is justified</div>
+<!-- 			<div class="live">LIVE</div>
+ -->			<div class="debate-info">
+				<span>2034 viewers</span><br>
+				<span>Four days ago</span>
+			</div>
+		</div>
+		</div>
 		</div>
 	</div>
-
+</div>
 </body>
 </html>

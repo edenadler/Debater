@@ -4,8 +4,9 @@ var http = require('http');
 var server = http.createServer(app);
 var io = require('socket.io')(server);
 
-
+app.set('port', (process.env.PORT || 5000));
 app.use(express.static('src'));
+app.use(express.static(__dirname + '/src'));
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname+'/src/index.html');
@@ -18,7 +19,7 @@ var calculatePercentage = function(a,b,id){
 	votePercentage[b] = 100-votePercentage[a];
 	console.log(votePercentage);
 	return {percent: votePercentage, id: id}
-}
+};
 
 
 io.on('connection', function(socket) {
@@ -35,11 +36,7 @@ io.on('connection', function(socket) {
 		io.emit('top comment', message);
 	});    
 	socket.on('vote', function(message){
-		console.log("message",message);
-		console.log("messageid",message.id);
 		message.id = parseInt(message.id);
-		console.log("after",message.id);
-		console.log("first",message.first[message.id]);
 		if (message.selections[0] === true){
 			voteTally[0] += 1;
 			if (message.first[message.id] === false)
@@ -50,11 +47,10 @@ io.on('connection', function(socket) {
 			if (message.first[message.id] === false)
 				voteTally[0] -=1;
 		}
-		console.log("tally",voteTally);
 		io.emit('voted', calculatePercentage(0,1,message.id));
 	}); 
 });
 
-server.listen(3000,function () {
-  console.log('App listening on port 3000!');
+server.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
 });
