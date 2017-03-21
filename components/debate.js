@@ -114,7 +114,7 @@ var Debate = React.createClass({
     	var first = self.state.firstVote;
         socket.emit('vote', {selections: selections, first: first, id: id},function(){
 
-        	
+
         var voted = self.state.firstVote;
         voted[parseInt(id)] = false;
 
@@ -126,7 +126,6 @@ var Debate = React.createClass({
             firstVote: voted
         });
 
-        console.log("afterchange",self.state.firstVote);
         });
 
         
