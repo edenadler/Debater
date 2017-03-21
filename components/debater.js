@@ -14,7 +14,7 @@ var Debater = React.createClass({
         };
     },
     componentDidMount: function(){
-        var socket = io.connect('http://localhost:3000');
+        var socket = io.connect();
         var self = this;
         socket.on('voted', function(message) {
             self.setState({

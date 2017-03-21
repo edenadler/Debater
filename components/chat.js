@@ -2,7 +2,7 @@ var React = require('react');
 var io = require("socket.io-client");
 var $ = require('jquery');
 
-var serverURL = "https://localhost:9057";
+var serverURL = "http://localhost:3000";
 
 
 var DebateChat = React.createClass({
@@ -13,7 +13,7 @@ getInitialState: function(){
 	}
 },
 componentDidMount: function(){
-	var socket = io.connect(serverURL);
+	var socket = io.connect();
 	var self = this;
 	socket.on('chat message', function(message) {
 		var messages = self.state.messages;

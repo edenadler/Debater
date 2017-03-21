@@ -6,7 +6,7 @@ var Debater = require('../components/debater');
 var VotePro = require('../components/votepro');
 var VoteCon = require('../components/votecon');
 
-var serverURL = "https://localhost:9057";
+var serverURL = "http://localhost:3000";
 
 
 var Debate = React.createClass({
@@ -24,7 +24,7 @@ var Debate = React.createClass({
 		}
 	},
 	componentDidMount: function(){
-		var socket = io.connect(serverURL);
+		var socket = io.connect();
 		var self = this;
 		socket.on('start debate', function(){
 		var countDown = setInterval(function(){self.tick(countDown)}, 1000);

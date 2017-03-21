@@ -1,5 +1,4 @@
 var React = require('react');
-var io = require("socket.io-client");
 
 // TODO: 
 // when user clicks one button, disable it and send +1 to the database for the vote score of that debater
