@@ -159,44 +159,33 @@ main{
 
 
 /************ debater css****************/
-.debaters{
+/*.debaters{
 	position: relative;
 	padding-left: 25%;
-}
+}*/
 
 .debater{
 	position: relative;
 }
 
- .debater-name-side{
- 	text-transform: uppercase;
- 	display: inline-block;
- 	background-color: #ffffff;
-	padding:5px 10px;
-	font-size:20px;
-	height: 42px;
-	width: 270px;
-  	bottom: 0;
-  	overflow: hidden;
-  	transition: all ease-in-out 0.7s;
-	font-size: 28px;
- }
 
  .tooltip-container{
- 	height: 150px;
- 	width: 270px;
+ 	height: 100px;
+ 	width: 100%;
  	background: white;
 	display: flex;
-  	flex-direction: column-reverse;
+  	flex-direction: row;
+  	align-items: flex-end;
   	justify-content: space-between;
   	margin-top: -50px;
   	margin-bottom: 10px;
+  	transition: all ease-in-out 0.7s;
  }
 
-.debater-name-side:hover {
-  height: 100%;
-  width: 270px;
-  bottom: 0;
+.debater-name:hover ~ .name-tooltip{
+	flex: 1;
+	transition: all ease-in-out 0.7s;
+	align-items: flex-start;
 }
 
  .debater-name{
@@ -205,6 +194,15 @@ main{
 	vertical-align: middle;
 	cursor: pointer;
 	color: #232323;
+	text-transform: uppercase;
+ 	display: inline-block;
+ 	background-color: #ffffff;
+	padding:5px 10px;
+	height: 50px;
+  	bottom: 0;
+	font-size: 28px;
+	flex: 1;
+	transition: all ease-in-out 0.7s;
  }
 
  .debater-name:hover{
@@ -226,6 +224,10 @@ main{
  	color: black;
  	padding: 0;
  	padding-top: 10px;
+ 	white-space: nowrap;
+ 	flex: 0.0000000001;
+ 	overflow: hidden;
+ 	transition: all ease-in-out 0.7s;
  }
 
  .name-tooltip p{
