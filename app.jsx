@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Debate = require('./components/debate');
+var Debate = require('./components/Debate');
 var DebateChat = require('./components/chat');
 var Header = require('./components/header')
 
@@ -29,19 +29,44 @@ var debateSettings = {
 	
 };
 
+var pro = {
+	name: "Eden Adler",
+	side: "pro",
+	location: "Michigan, USA", 
+	level: "Debater",
+	followers: "30.2k"
+}
+
+var con = {
+	name: "Gideon Keyson",
+	side: "con",
+	location: "Amsterdam, The Netherlands",
+	level: "Debater",
+	followers: "29.4k"
+}
+
 
 
 
 ReactDOM.render(
 		<div>
-			<Header />
-			<div className = "main">
-			<div className="debate-wrapper container">
-			 <Debate debateSettings = {debateSettings}/>
-			 </div>
-
-	   		 <DebateChat />
-	   		 </div>
+			<header className="clearfix">
+				<div className="logo">
+					<img src="assets/placeholder/logo.png" alt=""/>
+				</div>
+				<nav>
+					<ul>
+						<li>Log in</li>
+						<li>Sign up</li>
+					</ul>
+				</nav>
+			</header>
+			<main>
+				<div className="debate-wrapper container">
+			   		<Debate debateSettings = {debateSettings} pro={pro} con={con}/>
+	   		 		<DebateChat />
+	   		 	</div>
+	   		</main>
    		 </div>,
     document.getElementById('root')
 )
