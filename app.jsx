@@ -1,6 +1,6 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
-var Debate = require('./components/debate');
+var Debate = require('./components/Debate');
 var DebateChat = require('./components/chat');
 var Header = require('./components/header')
 
