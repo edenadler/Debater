@@ -6,7 +6,7 @@ var Debater = require('../components/debater');
 var VotePro = require('../components/votepro');
 var VoteCon = require('../components/votecon');
 
-var serverURL = "http://localhost:3000";
+var serverURL = "https://localhost:9057";
 
 
 var Debate = React.createClass({

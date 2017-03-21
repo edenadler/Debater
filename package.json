@@ -2,10 +2,10 @@
   "name": "Debater",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "webpack",
-    "start": "webpack-dev-server"
-  },
+ "scripts": {
+  "build": "NODE_ENV=production webpack --config webpack.config.js --progress --colors",
+  "start": "node app_server."
+},
   "engines": {
         "node": "6.9.4",
         "npm": "3.10.10"
