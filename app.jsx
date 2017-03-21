@@ -34,7 +34,7 @@ var pro = {
 	side: "pro",
 	location: "Michigan, USA", 
 	level: "Debater",
-	followers: "30.2k"
+	followers: "30.2k followers"
 };
 
 var con = {
@@ -42,7 +42,7 @@ var con = {
 	side: "con",
 	location: "Amsterdam, The Netherlands",
 	level: "Debater",
-	followers: "29.4k"
+	followers: "29.4k followers"
 };
 
 
