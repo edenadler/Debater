@@ -2,7 +2,6 @@ var React = require('react');
 var Debate = require('../components/Debate');
 var DebateChat = require('../components/chat');
 var Header = require('../components/header');
-var HomePage = require('../components/HomePage');
 
 var round1 = {
 	round: 1,
