@@ -1,5 +1,5 @@
 var React = require('react');
-var Debate = require('../components/Debate');
+var Debate = require('../components/debate');
 var DebateChat = require('../components/chat');
 var Header = require('../components/header');
 
