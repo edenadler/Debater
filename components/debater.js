@@ -6,7 +6,7 @@ var Debater = React.createClass({
     getInitialState: function() {
         return {
             percent: 0, 
-            follow: ['',<i className="fa fa-user-plus" aria-hidden="true"></i>,'']
+            follow: ['',<i className="fa fa-user-plus" aria-hidden="true"></i>,''],
         };
     },
     componentDidMount: function(){
@@ -27,6 +27,25 @@ var Debater = React.createClass({
     },
     render: function(){
       var percentage = this.state.percent + '%';
+      var currentlyDebating = false;
+      var nobodyDebating = false
+      var videoWidth = 150;
+      if(this.props.currentDebater == this.props.side){
+        currentlyDebating = true
+      }
+      else if (this.props.currentDebater == "none"){
+        nobodyDebating = true
+      }
+      else{
+        currentlyDebating = false
+        }
+
+      if(currentlyDebating){
+        videoWidth = 280
+      }
+      else if (nobodyDebating){
+        videoWidth = 200
+      }
         return(
             <div>
               <div className="debater-info">
@@ -45,7 +64,9 @@ var Debater = React.createClass({
               </div>
               <div className="debater-video">
                 <div className="vote-bar"><span className="vote-percent"></span><div className="vote-bar-fill" style={{height: percentage}}></div></div>
-                  <img src={"assets/placeholder/"+this.props.side+"-debater.png"} alt=""></img>
+                  
+                  <img style={{width: videoWidth + "px"}} src={"assets/placeholder/"+this.props.side+"-debater.png"} alt=""></img>
+                  
               </div>
             </div>
         )

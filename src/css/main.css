@@ -232,6 +232,9 @@ nav li{
  	justify-content: space-around;
  	position: relative;
  }
+ .debater-video img{
+ 	transition: all 0.5s ease-in-out
+ }
  .debater-info{
  	margin-bottom: 10px;
  	display: flex;
