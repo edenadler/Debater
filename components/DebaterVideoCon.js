@@ -18,17 +18,17 @@ var DebaterVideo = React.createClass({
    var session = OT.initSession(apiKey, sessionId)
         .on('streamCreated', function(event) {
           var options = {width: '100%', height: '100%', insertMode: 'append'}
-          var subscriber = session.subscribe(event.stream, 'videoContainer', options);
+          var subscriber = session.subscribe(event.stream, 'videoContainerPro', options);
         })
         .connect(token, function(error) {    
           var options = {width: '100%', height: '100%', insertMode: 'append'}    
-          var publisher = OT.initPublisher('videoContainer',options);
+          var publisher = OT.initPublisher('videoContainerCon',options);
           session.publish(publisher);
         });
 },
   render:function() {
     return (
-          <div style={{width: this.props.videoWidth + "px", height:this.props.videoWidth + "px"}} id ="videoContainer" >
+          <div style={{width: this.props.videoWidth + "px", height:this.props.videoWidth + "px"}} className = "videoContainer" id ="videoContainerCon" >
           </div>
 
 

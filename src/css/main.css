@@ -39,8 +39,8 @@ nav li{
 	display: inline;
 	margin-left: 20px;
 }
-.main{
-	background:#f9f9f9;
+main{
+	background:#ededed;
 	position: relative;
 }
 /************ debate info css****************/
@@ -169,11 +169,10 @@ nav li{
  	height: 100px;
  	width: 215px;
  	background: white;
- 	color:white;
 	display: flex;
   	flex-direction: column-reverse;
   	justify-content: space-between;
-  	background-color: #f9f9f9;
+  	background-color: #ededed;
  }
 
 .debater-name-side:hover {
@@ -215,7 +214,7 @@ nav li{
 	color: #232323;
 	padding: 5px 10px;
 	font-size: 16px;
-	margin-left: 10px;
+	margin-left: -50px;
 	cursor: pointer;
 	border:none;
 	align-self: flex-end;
@@ -235,13 +234,15 @@ nav li{
 /* .debater-video img{
  	transition: all 0.5s ease-in-out
  }*/
- #videoContainer{
+ .videoContainer{
  	 	transition: all 0.5s ease-in-out
 
  }
  .debater-info{
  	margin-bottom: 10px;
  	display: flex;
+ 	justify-content: space-around;
+ 	align-items: center
  }
  .vote-bar{
  	height: 232px;
@@ -275,7 +276,8 @@ nav li{
 	font-family: 'Franklin-Gothic';
 	font-size: 20px;
 	border: none;
-	transition: all 0.2s ease-in-out 
+	transition: all 0.2s ease-in-out;
+	margin-top:5px;
 }
 .vote-btn:hover{
 	opacity: 0.9;
@@ -349,10 +351,6 @@ input[type=submit] {
     margin-top: 20px;
 }
 /******************TESTING ANIMATION*********************/
-header {
-  text-align: center;
-}
-
 header h1 {
   position: relative;
   text-align: center;

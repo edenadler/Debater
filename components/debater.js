@@ -1,7 +1,8 @@
 var React = require('react');
 var io = require('socket.io-client');
 var $ = require('jquery');
-var DebaterVideo = require('../components/DebaterVideo');
+var DebaterVideoCon = require('../components/DebaterVideoCon');
+var DebaterVideoPro = require('../components/DebaterVideoPro');
 
 
 
@@ -43,7 +44,7 @@ var Debater = React.createClass({
         currentlyDebating = false
       }
       if(currentlyDebating){
-        videoWidth = 280
+        videoWidth = 250
       }
       else if (nobodyDebating){
         videoWidth = 200
@@ -66,8 +67,7 @@ var Debater = React.createClass({
               </div>
               <div className="debater-video">
                 <div className="vote-bar"><span className="vote-percent"></span><div className="vote-bar-fill" style={{height: percentage}}></div></div>
-                    { /*this.props.side =="con" ? <DebaterVideoCon /> :<DebaterVideoPro /> */}
-                    <DebaterVideo videoWidth = {videoWidth} />
+                    {this.props.side =="con" ? <DebaterVideoCon videoWidth ={videoWidth}/> :<DebaterVideoPro videoWidth = {videoWidth} /> }
                 
                   {/*<img style={{width: videoWidth + "px"}} src={"assets/placeholder/"+this.props.side+"-debater.png"} alt=""></img>*/}
                   

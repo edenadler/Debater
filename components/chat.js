@@ -89,7 +89,7 @@ var TopComments = React.createClass({
 				)
 		})
 		return(
-			<div className="top-comments col-md-2 col-md-offset-4">
+			<div className="top-comments col-md-3 col-md-offset-2">
 			<h3>Top Comments</h3>
 			<div className="messages">
 			{ messages_list }
@@ -101,7 +101,7 @@ var TopComments = React.createClass({
 var Chat = React.createClass({
 	render:function(){
 		return(
-			<div  className = 'chat col-md-2'>
+			<div  className = 'chat col-md-3'>
 			<Chatfeed messages = {this.props.messages} handleUpdateLikes = {this.props.handleUpdateLikes}  />
 			<Chatinput sendMessage = {this.props.sendMessage}/>
 			</div>

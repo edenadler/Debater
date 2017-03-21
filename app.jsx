@@ -50,17 +50,7 @@ var con = {
 
 ReactDOM.render(
 		<div>
-			<header className="clearfix">
-				<div className="logo">
-					<img src="assets/placeholder/logo.png" alt=""/>
-				</div>
-				<nav>
-					<ul>
-						<li>Log in</li>
-						<li>Sign up</li>
-					</ul>
-				</nav>
-			</header>
+			<Header />
 			<main>
 				<div className="debate-wrapper container">
 			   		<Debate debateSettings = {debateSettings} pro={pro} con={con}/>

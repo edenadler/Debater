@@ -137,7 +137,7 @@ var Debate = React.createClass({
                <div className="debate-title"><h1>{this.props.debateSettings.topic}</h1></div>
                 <DebateInfo roundTimeLeft = {this.state.roundTimeLeft} startDebate = {this.startDebate} timeUntilNextRound = {this.state.timeUntilNextRound} round = {this.state.round} event ={this.state.event}/>
               <div className="debate row">
-                <div className="debater con col-md-4 col-md-offset-2 text-center">
+                <div className="debater con col-md-4 col-md-offset-1 text-center">
                     <Debater name={this.props.con.name} side={this.props.con.side} index="2" location={this.props.con.location} level={this.props.con.level} followers={this.props.con.followers} currentDebater = {this.state.debater}/>
                     <VoteCon id = "1" selected={this.state.selections[1]} onToggle={this.onChildToggle}/> 
                 </div>
