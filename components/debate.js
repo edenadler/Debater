@@ -7,6 +7,9 @@ var VoteCon = require('../components/votecon');
 var DebaterCon = require('../components/debatercon');
 var DebaterPro = require('../components/debaterpro');
 
+var serverURL = "http://localhost:3000";
+
+
 var Debate = React.createClass({
 	getInitialState: function(){
 		return{
@@ -17,20 +20,21 @@ var Debate = React.createClass({
 			timeUntilNextRound: 5,
 			selections: [false, false],
 			firstVote: true,
+			debater: "pro"
 
 			
 
 		}
 	},
 	componentDidMount: function(){
-		var socket = io.connect('http://localhost:3000');
+		var socket = io.connect(serverURL);
 		var self = this;
 		socket.on('start debate', function(){
 		var countDown = setInterval(function(){self.tick(countDown)}, 1000);
 		})
 	},
 	startDebate: function(e){
-		var socket = io.connect('http://localhost:3000');
+		var socket = io.connect(serverURL);
 		$(".start-debate").hide();
 		socket.emit('start debate')
 	},
@@ -40,6 +44,7 @@ var Debate = React.createClass({
 	    	round:this.state.round,
 	    	firstTime: this.state.firstTime,
 			event:this.state.event,
+			debater: this.state.debater
 
 
 	    },function(){
@@ -50,16 +55,14 @@ var Debate = React.createClass({
 		    			roundTimeLeft: this.props.debateSettings.rounds[this.state.round-1].time,
 		    			round:this.state.round,
 		    			firstTime:false,
-						event:this.state.event
+						event:this.state.event,
+						debater:"con"
 
 		    		},function(){
 		    			var self = this
 		    		var countDown = setInterval(function(){self.tick(countDown)}, 1000);
 		    		});
-		    		
-
 		    	}
-		    
 		    	else{ //next round
 		    		if (this.state.round == this.props.debateSettings.rounds.length){
 		    			this.setState({
@@ -79,7 +82,8 @@ var Debate = React.createClass({
 		    			event:this.props.debateSettings.rounds[this.state.round].event,
 		    			round:this.state.round + 1,
 						firstTime:true,
-						timeUntilNextRound:5
+						timeUntilNextRound:5,
+						debater:"pro"
 		    		},function(){
 		    			var self = this
 
@@ -103,7 +107,7 @@ var Debate = React.createClass({
 	}, //function "tick" closing
 	 onChildToggle: function(id, selected) {
         var selections = this.state.selections;
-        var socket = io.connect('http://localhost:3000');
+        var socket = io.connect(serverURL);
 
           if (id == 0){
             selections[0] = selected;
@@ -134,11 +138,11 @@ var Debate = React.createClass({
                 <DebateInfo roundTimeLeft = {this.state.roundTimeLeft} startDebate = {this.startDebate} timeUntilNextRound = {this.state.timeUntilNextRound} round = {this.state.round} event ={this.state.event}/>
               <div className="debate row">
                 <div className="debater con col-md-4 col-md-offset-1 text-center">
-                    <DebaterCon/>
+                    <DebaterCon debater = {this.state.debater}/>
                     <VoteCon id = "1" selected={this.state.selections[1]} onToggle={this.onChildToggle}/> 
                 </div>
                 <div className="debater pro col-md-4 col-md-offset-2 text-center">
-                    <DebaterPro/>
+                    <DebaterPro debater = {this.state.debater}/>
                     <VotePro id = "0" selected={this.state.selections[0]} onToggle={this.onChildToggle}/>
                 </div>
                 </div>

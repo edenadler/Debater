@@ -16,8 +16,8 @@ var votePercentage = [0,0];
 var calculatePercentage = function(a,b){
 	votePercentage[a] = voteTally[a]/(voteTally[a]+voteTally[b])*100;
 	votePercentage[b] = 100-votePercentage[a];
-	return votePercentage
-}
+	return votePercentage;
+};
 
 
 io.on('connection', function(socket) {
@@ -48,6 +48,6 @@ io.on('connection', function(socket) {
 	}); 
 });
 
-server.listen(3000, function () {
-  console.log('app listening on port 3000!');
+server.listen(3000,function () {
+  console.log('App listening on port 3000!');
 });

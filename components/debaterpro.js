@@ -1,6 +1,10 @@
 var React = require('react');
 var io = require('socket.io-client');
 var $ = require('jquery');
+var DebaterVideo = require('../components/DebaterVideo');
+var serverURL = "http://localhost:3000"
+
+
 
 var DebaterPro = React.createClass({
     getInitialState: function() {
@@ -10,7 +14,7 @@ var DebaterPro = React.createClass({
         };
     },
     componentDidMount: function(){
-        var socket = io.connect('http://localhost:3000');
+        var socket = io.connect(serverURL);
         var self = this;
         socket.on('voted', function(message) {
             self.setState({

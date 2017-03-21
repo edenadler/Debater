@@ -65,6 +65,7 @@ nav li{
 	font-size: 18px;
 	position: relative;
 	visibility: hidden;
+	width: 230px;
 }
 .start-ticking{
 	animation: nextround 1s ease-in-out 5;
@@ -80,9 +81,8 @@ nav li{
 
 .next-round .time-left{
 	color:red;
-	
 	position: absolute;
-	right:-20px;
+	right:0px;
 	top:0px;
 }
 @keyframes nextround {
@@ -118,7 +118,7 @@ nav li{
 	
  }
  .viewers-controls{
- 	width: 210px;
+ 	width: 230px;
  }
  .start-debate{
  	background-color: #26A65B;
@@ -204,6 +204,7 @@ nav li{
 	font-size: 16px;
 	margin-left: 10px;
 	cursor: pointer;
+	border:none;
  }
  .debater-video{
  	width:280px;
@@ -226,9 +227,9 @@ nav li{
 	top:10px;
 	left: -50px;
 	color:white;
-	 display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	display: flex;
+  	flex-direction: column;
+  	justify-content: space-between;
  }
  .pro .vote-bar{
  	left: 280px;
@@ -249,11 +250,17 @@ nav li{
 	font-family: 'Franklin-Gothic';
 	font-size: 20px;
 	border: none;
+	transition: all 0.2s ease-in-out 
+}
+.vote-btn:hover{
+	opacity: 0.9;
 }
 .disabled{
 	opacity: 0.4;
 }
-
+.disabled:hover{
+	opacity: 0.4
+}
 .seperate-line{
 	width: 100%;
 	height: 5px;

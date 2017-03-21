@@ -1,6 +1,9 @@
 var React = require('react');
 var io = require("socket.io-client");
 var $ = require('jquery');
+var DebaterVideo = require('../components/DebaterVideo');
+
+var serverURL = "http://localhost:3000"
 
 var DebaterCon = React.createClass({
     getInitialState: function() {
@@ -10,7 +13,7 @@ var DebaterCon = React.createClass({
         };
     },
     componentDidMount: function(){
-        var socket = io.connect('http://localhost:3000');
+        var socket = io.connect(serverURL);
         var self = this;
         socket.on('voted', function(message) {
             self.setState({
@@ -37,8 +40,13 @@ var DebaterCon = React.createClass({
                 <button className="debater-follow-btn" key ="2" onClick={this.follow}>{this.state.follow}</button>
               </div>
               <div className="debater-video">
-                <div className="vote-bar"><span className="vote-percent"></span><div className="vote-bar-fill" style={{height: percentage}}></div></div>
-                <img src="assets/placeholder/con-debater.png" alt=""></img>
+                <div className="vote-bar"><span className="vote-percent"></span><div className="vote-bar-fill" style={{height: percentage}}></div>
+                </div>
+                      <div className="video">
+                      {/*<DebaterVideo />*/}
+                      <img src="assets/placeholder/con-debater.png" alt=""></img>
+
+                      </div>
               </div>
           </div>
         )
