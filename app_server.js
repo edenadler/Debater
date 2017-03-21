@@ -13,11 +13,12 @@ app.get('/', function (req, res) {
 
 var voteTally = [0,0];
 var votePercentage = [0,0];
-var calculatePercentage = function(a,b){
+var calculatePercentage = function(a,b,id){
 	votePercentage[a] = voteTally[a]/(voteTally[a]+voteTally[b])*100;
 	votePercentage[b] = 100-votePercentage[a];
-	return votePercentage;
-};
+	console.log(votePercentage);
+	return {percent: votePercentage, id: id}
+}
 
 
 io.on('connection', function(socket) {
@@ -34,17 +35,23 @@ io.on('connection', function(socket) {
 		io.emit('top comment', message);
 	});    
 	socket.on('vote', function(message){
+		console.log("message",message);
+		console.log("messageid",message.id);
+		message.id = parseInt(message.id);
+		console.log("after",message.id);
+		console.log("first",message.first[message.id]);
 		if (message.selections[0] === true){
 			voteTally[0] += 1;
-			if (message.first === false)
+			if (message.first[message.id] === false)
 				voteTally[1] -=1;
 		}
 		else{
 			voteTally[1] += 1;
-			if (message.first === false)
+			if (message.first[message.id] === false)
 				voteTally[0] -=1;
 		}
-		io.emit('voted', calculatePercentage(0,1));
+		console.log("tally",voteTally);
+		io.emit('voted', calculatePercentage(0,1,message.id));
 	}); 
 });
 
