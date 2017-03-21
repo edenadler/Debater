@@ -6,7 +6,7 @@ var Debater = require('../components/debater');
 var VotePro = require('../components/votepro');
 var VoteCon = require('../components/votecon');
 
-var serverURL = "http://localhost:3000";
+// var serverURL = "http://localhost:3000";
 
 
 var Debate = React.createClass({
@@ -31,7 +31,7 @@ var Debate = React.createClass({
 		})
 	},
 	startDebate: function(e){
-		var socket = io.connect(serverURL);
+		var socket = io.connect();
 		$(".start-debate").hide();
 		socket.emit('start debate')
 	},
@@ -107,7 +107,7 @@ var Debate = React.createClass({
 	}, //function "tick" closing
 	onChildToggle: function(id, selected) {
         var selections = this.state.selections;
-        var socket = io.connect(serverURL);
+        var socket = io.connect();
 
           if (id == 0){
             selections[0] = selected;
