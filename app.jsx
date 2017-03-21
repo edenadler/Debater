@@ -1,8 +1,8 @@
 var React = require('react');
 var ReactDOM = require('react-dom');
 
-var HomePage = require('../components/HomePage');
-var DebatePage = require('../components/DebatePage');
+var HomePage = require('./components/HomePage');
+var DebatePage = require('./components/DebatePage');
 var App = React.createClass({
 	getInitialState:function(){
 		return{
