@@ -6,6 +6,10 @@
     "dev": "webpack",
     "start": "webpack-dev-server"
   },
+  "engines": {
+        "node": "6.9.4",
+        "npm": "3.10.10"
+    },
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.10.4",

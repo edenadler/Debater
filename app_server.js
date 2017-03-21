@@ -1,16 +1,23 @@
 var express = require('express');
-var app = express();
+var socketIO = require('socket.io');
+var path = require('path');
 var http = require('http');
-var server = http.createServer(app);
-var io = require('socket.io')(server);
+var PORT = process.env.PORT || 3000;
+var INDEX = path.join(__dirname, '/src/index.html');
 
-app.set('port', (process.env.PORT || 5000));
+var app = express();
+ 
+ var server = app.listen(PORT, () => console.log(`Listening on ${ PORT }`));
+
+
 app.use(express.static('src'));
-app.use(express.static(__dirname + '/src'));
+
+var io = require('socket.io').listen(server);
 
 app.get('/', function (req, res) {
   res.sendFile(__dirname+'/src/index.html');
 });
+
 
 var voteTally = [0,0];
 var votePercentage = [0,0];
@@ -51,6 +58,3 @@ io.on('connection', function(socket) {
 	}); 
 });
 
-server.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
