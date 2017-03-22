@@ -118,24 +118,23 @@ var Debate = React.createClass({
             selections[1] = selected;
             selections[0] = !selected;
           }
-    	var self = this
-    	console.log("stateoffirst",self.state.firstVote);
+    	var self = this;
     	var first = self.state.firstVote;
-        socket.emit('vote', {selections: selections, first: first, id: id},function(){
+        socket.emit('vote', {selections: selections, first: first, id: id});
+        	console.log("finished voting");
 
+		socket.on('voted', function(){
+	        var voted = self.state.firstVote;
+	        voted[parseInt(id)] = false;
+	        console.log("voted",voted);
 
-        var voted = self.state.firstVote;
-        voted[parseInt(id)] = false;
+	        self.setState({
+	            selections: selections,
+	            firstVote: voted
+	        });
 
-        this.setState({
-            roundTimeLeft:this.props.debateSettings.rounds[this.state.round].time,
-            round:this.state.round,
-            firstTime: this.state.firstTime,
-            selections: selections,
-            firstVote: voted
-        });
-
-        });
+        console.log("finished",self.state.firstVote);
+      });
 
         
     },

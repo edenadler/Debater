@@ -9,7 +9,7 @@ var Tooltip = React.createClass({
                <div className="tooltip-container">
                     <a className="debater-name">
                       <span className="debater-side text-center">
-                        <div className={"debater-side-details-"+this.props.details.side}>{this.props.details.side}</div>
+                        <div className={"debater-side-details-"+this.props.details.side}>{this.props.details.versus}</div>
                       </span>
                       <div>{this.props.details.name}</div>
                     </a>

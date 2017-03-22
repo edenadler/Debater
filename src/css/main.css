@@ -51,8 +51,11 @@ main{
 	background-color: #232323;
 	padding: 10px;
 	color: white;
+	margin: 0 auto;
 	margin-top: -40px;
 	margin-bottom: 10px;
+	width:80%;
+
 }
 
 
@@ -168,6 +171,8 @@ main{
 
 .debater{
 	position: relative;
+	height: 420px;
+	padding: 10px;
 }
 
 
@@ -249,7 +254,7 @@ main{
 
 .debater-side-details-con{
 	height: 35px;
-	width: 70px;
+	width: 150px;
 	padding: 4px;
 	margin: 0 auto;
 	border: 3px solid #ED8F85;
@@ -257,7 +262,7 @@ main{
 
 .debater-side-details-pro{
 	height: 35px;
-	width: 70px;
+	width: 150px;
 	padding: 4px;
 	margin: 0 auto;
 	border: 3px solid #36C0A2;
@@ -278,7 +283,7 @@ main{
 
  .debater-video{
  	width:280px;
- 	height: 250px;
+ 	height: 300px;
  	margin:0 auto;
  	display: flex;
  	align-items: center;
@@ -309,13 +314,12 @@ main{
 
  .vote-bar{
  	height: 232px;
- 	width: 30px;
+ 	width: 40px;
  	display: inline-block;
  	background: white;
  	position: absolute;
-	top:10px;
+	top:65px;
 	left: 11px;
-	color:white;
 	display: flex;
   	flex-direction: column;
   	justify-content: space-between;
@@ -328,8 +332,9 @@ main{
 	height: 20%;
 	width: 100%;
 	bottom: 0;
-	font-size: 14px;
-	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
 	transition: 0.5s all ease-in-out;
  }
 
@@ -338,8 +343,9 @@ main{
 	height: 20%;
 	width: 100%;
 	bottom: 0;
-	font-size: 14px;
-	color: white;
+	font-size: 16px;
+	font-weight: bold;
+	color: black;
 	transition: 0.5s all ease-in-out;
  }
 
@@ -352,11 +358,12 @@ main{
 	font-family: 'Franklin-Gothic';
 	font-size: 24px;
 /*	border: none;
-*/	transition: all 0.3s ease-in-out;
-	margin-top:10px;
-	margin-bottom: 15px;
-	background: inherit;
-	text-transform: uppercase;
+*/	
+	font-size: 30px;
+	transition: all 0.2s ease-in-out;
+	margin-top:20px;
+	background: inherit
+
 }
 .vote-btn:hover{
 	background: rgba(201, 201, 201, 0.56);

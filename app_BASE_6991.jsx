@@ -1,7 +1,8 @@
 var React = require('react');
-var Debate = require('../components/debate');
-var DebateChat = require('../components/chat');
-var Header = require('../components/header');
+var ReactDOM = require('react-dom');
+var Debate = require('./components/Debate');
+var DebateChat = require('./components/chat');
+var Header = require('./components/header');
 
 var round1 = {
 	round: 1,
@@ -33,8 +34,7 @@ var pro = {
 	side: "pro",
 	location: "Michigan, USA", 
 	level: "Debater",
-	followers: "30.2k followers",
-	versus:"In Favor"
+	followers: "30.2k followers"
 };
 
 var con = {
@@ -42,27 +42,21 @@ var con = {
 	side: "con",
 	location: "Amsterdam, The Netherlands",
 	level: "Debater",
-	followers: "29.4k followers",
-	versus:"Against"
-
+	followers: "29.4k followers"
 };
 
 
 
-var DebatePage = React.createClass({
-	render:function(){
-		return(
-			<div>
+
+ReactDOM.render(
+		<div>
 			<Header />
 			<main>
 				<div className="debate-wrapper container">
 			   		<Debate debateSettings = {debateSettings} pro={pro} con={con}/>
-			   	</div>
-
 	   		 		<DebateChat />
+	   		 	</div>
 	   		</main>
-   		 </div>
-			)
-	}
-})
-module.exports = DebatePage
+   		 </div>,
+    document.getElementById('root')
+)

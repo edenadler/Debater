@@ -45,23 +45,20 @@ var Debater = React.createClass({
         currentlyDebating = false
       }
       if(currentlyDebating){
-        videoWidth = 260
+        videoWidth = 300
       }
       else if (nobodyDebating){
-        videoWidth = 230
+        videoWidth = 250
       }
       else {
-        videoWidth = 200
+        videoWidth = 250
       }
         return(
             <div>
-              <div className="debater-info">
-                <div className="debater-follow-btn" key ={this.props.index} onClick={this.follow}>{this.state.follow[this.props.index]}</div>
-              </div>
               <div className="voting">
                 <div className="vote-bar"><span className="vote-percent"></span><div className={"vote-bar-fill-"+this.props.side} style={{height: this.state.percent[parseInt(this.props.index)]+"%"}}>{parseInt(this.state.percent[parseInt(this.props.index)])+"%"}</div></div>
               </div>
-              <div className="debater-video">
+              <div className="debater-video" style={{width: videoWidth}}>
                     {this.props.side =="con" ? <DebaterVideoCon videoWidth ={videoWidth}/> :<DebaterVideoPro videoWidth = {videoWidth} /> }
                 
                   {/*<img style={{width: videoWidth + "px"}} src={"assets/placeholder/"+this.props.side+"-debater.png"} alt=""></img>*/}
