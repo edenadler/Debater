@@ -8,7 +8,7 @@ body{
 	font-size: 12px;
 	padding-top: 20px;
 	padding-bottom: 50px;
-	background-color: #F2F4F4;
+	background-color: #ddd;
 }
 h1,h2,h3{
 	font-family: 'Franklin-Gothic';
@@ -184,7 +184,7 @@ main{
   	flex-direction: row;
   	align-items: flex-end;
   	justify-content: space-between;
-  	margin-top: -20px;
+  	margin-top: -40px;
   	margin-bottom: 10px;
   	transition: all ease-in-out 0.7s;
   	z-index: 22;
@@ -384,7 +384,7 @@ main{
 }
 .debate-chat{
 	 margin-top: -100px;
-    background: #f2f4f4;
+    background: #ddd;
     padding-top: 80px;
 }
 /**********comment css***********/
