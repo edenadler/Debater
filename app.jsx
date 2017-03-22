@@ -25,7 +25,7 @@ var round3={
 
 var debateSettings = {
 	rounds:[round1,round2,round3],
-	topic: "THERE SHOULD BE A QUOTA FOR WOMEN IN GOVERNMENT",
+	topic: "SHOULD YOU HIRE A JUNIOR DEVELOPER?",
 	
 };
 
@@ -34,7 +34,8 @@ var pro = {
 	side: "pro",
 	location: "Michigan, USA", 
 	level: "Debater",
-	followers: "30.2k followers"
+	followers: "30.2k followers", 
+	versus: "In Favor"
 };
 
 var con = {
@@ -42,7 +43,8 @@ var con = {
 	side: "con",
 	location: "Amsterdam, The Netherlands",
 	level: "Debater",
-	followers: "29.4k followers"
+	followers: "29.4k followers", 
+	versus: "Against"
 };
 
 
