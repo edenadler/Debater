@@ -54,8 +54,9 @@ var DebatePage = React.createClass({
 			<main>
 				<div className="debate-wrapper container">
 			   		<Debate debateSettings = {debateSettings} pro={pro} con={con}/>
+			   	</div>
+
 	   		 		<DebateChat />
-	   		 	</div>
 	   		</main>
    		 </div>
 			)

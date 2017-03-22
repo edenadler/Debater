@@ -4,7 +4,7 @@ var Header = React.createClass({
 		return(
 			<header className="clearfix">
 				<div className="logo">
-					<img src="assets/placeholder/logo.png" alt=""/>
+					<img src="assets/placeholder/logo1.jpg" alt=""/>
 				</div>
 				<nav>
 					<ul>

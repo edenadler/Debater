@@ -72,8 +72,10 @@ sendMessage: function(event){
 render:function(){
 	return(
 		<div className="debate-chat row">
+		<div className="container">
 		<TopComments topcomments = {this.state.topcomments} handleUpdateLikes ={this.handleUpdateLikes}/>
 		<Chat messages = {this.state.messages} handleUpdateLikes ={this.handleUpdateLikes} sendMessage = {this.sendMessage}/>
+		</div>
 		</div>
 		)
 }
@@ -89,7 +91,7 @@ var TopComments = React.createClass({
 				)
 		})
 		return(
-			<div className="top-comments col-md-3 col-md-offset-2">
+			<div className="top-comments col-md-5">
 			<h3>Top Comments</h3>
 			<div className="messages">
 			{ messages_list }
@@ -101,7 +103,7 @@ var TopComments = React.createClass({
 var Chat = React.createClass({
 	render:function(){
 		return(
-			<div  className = 'chat col-md-3'>
+			<div  className = 'chat col-md-7'>
 			<Chatfeed messages = {this.props.messages} handleUpdateLikes = {this.props.handleUpdateLikes}  />
 			<Chatinput sendMessage = {this.props.sendMessage}/>
 			</div>

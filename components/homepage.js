@@ -7,7 +7,7 @@ var HomePage = React.createClass({
 		<div className="homepage">
 		<header className="clearfix">
 		<div className="logo">
-			<img src="assets/placeholder/logo.png" alt=""></img>
+			<img src="assets/placeholder/logo1.jpg" alt=""></img>
 		</div>
 		<div className="search-container">
 		<div className="search">
@@ -36,14 +36,14 @@ var HomePage = React.createClass({
 			<div className="live">LIVE</div>
 			<div className="debate-card-info">
 				<span>790 viewers</span><br />
-				<span>Two days ago</span>
+				<span>Now</span>
 			</div>
 		</div>
 		</div>
 		<div className="card-container col-md-3">
 		<div className="debate-card" onClick = {this.props.handleClickedProjectItem}>
 			<div className="debate-topic">WEED should be legalised</div>
-			<div className="live">LIVE</div>
+			
 			<div className="debate-card-info">
 				<span>1034 viewers</span><br />
 				<span>A week ago</span>
@@ -53,17 +53,15 @@ var HomePage = React.createClass({
 		<div className="card-container col-md-3">
 		<div className="debate-card" onClick = {this.props.handleClickedProjectItem}>
 			<div className="debate-topic">The EU is finished</div>
-			 <div className="live">LIVE</div>
 			<div className="debate-card-info">
 				<span>500 viewers</span><br />
-				<span>NOW</span>
+				<span>Five Days AGo</span>
 			</div>
 		</div>
 		</div>
 		<div className="card-container col-md-3">
 		<div className="debate-card" onClick = {this.props.handleClickedProjectItem}>
 			<div className="debate-topic">Trump's ban is justified</div>
-			<div className="live">LIVE</div>
 			<div className="debate-card-info">
 				<span>2034 viewers</span><br />
 				<span>Four days ago</span>
