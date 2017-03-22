@@ -7,8 +7,12 @@ var Tooltip = React.createClass({
     return(
             <div className="debaters">
                <div className="tooltip-container">
-                    <a className="debater-name">{this.props.details.name}</a>
-                    <span className="debater-side">{this.props.side}</span>
+                    <a className="debater-name">
+                      <span className="debater-side text-center">
+                        <div className={"debater-side-details-"+this.props.details.side}>{this.props.details.side}</div>
+                      </span>
+                      <div>{this.props.details.name}</div>
+                    </a>
                     <div className="name-tooltip">
                       <p><i className="fa fa-globe icon" aria-hidden="true"/>{this.props.details.location}</p>
                       <p><i className="fa fa-certificate icon" aria-hidden="true"/>{this.props.details.level}</p>

@@ -59,7 +59,7 @@ var Debater = React.createClass({
                 <div className="debater-follow-btn" key ={this.props.index} onClick={this.follow}>{this.state.follow[this.props.index]}</div>
               </div>
               <div className="voting">
-                <div className="vote-bar"><span className="vote-percent"></span><div className={"vote-bar-fill-"+this.props.side} style={{height: this.state.percent[parseInt(this.props.index)]+"%"}}></div></div>
+                <div className="vote-bar"><span className="vote-percent"></span><div className={"vote-bar-fill-"+this.props.side} style={{height: this.state.percent[parseInt(this.props.index)]+"%"}}>{parseInt(this.state.percent[parseInt(this.props.index)])+"%"}</div></div>
               </div>
               <div className="debater-video">
                     {this.props.side =="con" ? <DebaterVideoCon videoWidth ={videoWidth}/> :<DebaterVideoPro videoWidth = {videoWidth} /> }

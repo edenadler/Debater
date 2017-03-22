@@ -141,7 +141,7 @@ var Debate = React.createClass({
     },
 	render:function(){
 		return(
-				  <div>
+			<div>
                <div className="debate-title"><h1>{this.props.debateSettings.topic}</h1></div>
                 <DebateInfo roundTimeLeft = {this.state.roundTimeLeft} startDebate = {this.startDebate} timeUntilNextRound = {this.state.timeUntilNextRound} round = {this.state.round} event ={this.state.event}/>
               <div className="row text-center">
@@ -152,7 +152,7 @@ var Debate = React.createClass({
               	 	<Tooltip details={this.props.pro}/>
               	 </div>
               </div>
-              <div className="debate row">
+              <div className="debate debating row">
                 <div className="debater con col-md-6 text-center">
                     <Debater name={this.props.con.name} side={this.props.con.side} index="1" location={this.props.con.location} level={this.props.con.level} followers={this.props.con.followers} currentDebater = {this.state.debater}/>
                     <VoteCon id = "1" selected={this.state.selections[1]} onToggle={this.onChildToggle} /> 

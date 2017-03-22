@@ -126,6 +126,8 @@ main{
  	line-height: 80px;
  	color: #040404; 
 	margin: 0 auto;
+	z-index: 100;
+	position: relative;
 	
  }
  .viewers-controls{
@@ -177,9 +179,11 @@ main{
   	flex-direction: row;
   	align-items: flex-end;
   	justify-content: space-between;
-  	margin-top: -50px;
+  	margin-top: -20px;
   	margin-bottom: 10px;
   	transition: all ease-in-out 0.7s;
+  	z-index: 22;
+  	position: relative;
  }
 
 .debater-name:hover ~ .name-tooltip{
@@ -198,7 +202,7 @@ main{
  	display: inline-block;
  	background-color: #ffffff;
 	padding:5px 10px;
-	height: 50px;
+	height: 70px;
   	bottom: 0;
 	font-size: 28px;
 	flex: 1;
@@ -237,9 +241,27 @@ main{
 
  .debater-side{
  	vertical-align: middle;
- 	font-size: 12px;
- 	color: #DE3220;
+ 	font-size: 28px;
+ 	line-height: 0.85;
+ 	color: black;
+ 	display: block;
  }
+
+.debater-side-details-con{
+	height: 35px;
+	width: 70px;
+	padding: 4px;
+	margin: 0 auto;
+	border: 3px solid #ED8F85;
+}
+
+.debater-side-details-pro{
+	height: 35px;
+	width: 70px;
+	padding: 4px;
+	margin: 0 auto;
+	border: 3px solid #36C0A2;
+}
 
  .debater-follow-btn{
  	display: flex;
@@ -306,25 +328,31 @@ main{
 	height: 20%;
 	width: 100%;
 	bottom: 0;
+	font-size: 14px;
+	color: white;
 	transition: 0.5s all ease-in-out;
  }
 
  .vote-bar-fill-pro{
-	background: #CBF1EC;
+	background: #43EDC9;
 	height: 20%;
 	width: 100%;
 	bottom: 0;
+	font-size: 14px;
+	color: white;
 	transition: 0.5s all ease-in-out;
  }
 
 .vote-btn{
 	border-radius: 3px;
-	background-image: linear-gradient(to left, #422898, #4922c4);
+	background-color: #ABB2B9;
+	border: 4px solid #EAECEE;
+	color: ;
 	display: inline-block;
-	padding:8px 40px;
+	padding:4px 40px;
 	color:white;
 	font-family: 'Franklin-Gothic';
-	font-size: 20px;
+	font-size: 30px;
 	border: none;
 	transition: all 0.2s ease-in-out;
 	margin-top:5px;
@@ -400,20 +428,4 @@ input[type=submit] {
     margin: 0;
     resize: none;
     margin-top: 20px;
-}
-/******************TESTING ANIMATION*********************/
-
-
-.name-tooltip h1 {
-  position: relative;
-  text-align: center;
-  color: #fff;
-  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
-  font-size: 25px;
-  line-height: 25px;
-  display: inline-block;
-  padding: 10px;
-  transition: all ease 0.250s;
-  border-top: 1px solid #fff;
-  border-bottom: 1px solid #fff;
 }
