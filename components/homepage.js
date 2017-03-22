@@ -16,8 +16,8 @@ var HomePage = React.createClass({
 		</div>
 		<nav>
 			<ul>
-				<li>Debates</li>
-				<li>Debaters</li>
+				<li className="main-debates">Debates</li>
+				<li className="main-debaters">Debaters</li>
 				<li>Log in</li>
 				<li>SIgn up</li>
 			</ul>
@@ -32,7 +32,7 @@ var HomePage = React.createClass({
 		<div className="row">
 		<div className="card-container col-md-3">
 		<div className="debate-card" onClick = {this.props.handleClickedProjectItem}>
-			<div className="debate-topic">THE TWO STATE SOLUTION IS OUTDATED</div>
+			<div className="debate-topic">SHOULD YOU HIRE A JUNIOR DEVELOPER?</div>
 			<div className="live">LIVE</div>
 			<div className="debate-card-info">
 				<span>790 viewers</span><br />
@@ -42,7 +42,7 @@ var HomePage = React.createClass({
 		</div>
 		<div className="card-container col-md-3">
 		<div className="debate-card" onClick = {this.props.handleClickedProjectItem}>
-			<div className="debate-topic">WEED should be legalised</div>
+			<div className="debate-topic">The two state solution is outdated</div>
 			
 			<div className="debate-card-info">
 				<span>1034 viewers</span><br />
@@ -61,7 +61,7 @@ var HomePage = React.createClass({
 		</div>
 		<div className="card-container col-md-3">
 		<div className="debate-card" onClick = {this.props.handleClickedProjectItem}>
-			<div className="debate-topic">Trump's ban is justified</div>
+			<div className="debate-topic">Trump\'s ban is justified</div>
 			<div className="debate-card-info">
 				<span>2034 viewers</span><br />
 				<span>Four days ago</span>

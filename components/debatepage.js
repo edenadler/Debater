@@ -24,7 +24,7 @@ var round3={
 
 var debateSettings = {
 	rounds:[round1,round2,round3],
-	topic: "THERE SHOULD BE A QUOTA FOR WOMEN IN GOVERNMENT",
+	topic: "SHOULD YOU HIRE JUNIOR DEVELOPERS?",
 	
 };
 
