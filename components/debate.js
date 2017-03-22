@@ -5,6 +5,7 @@ var DebateInfo = require('../components/DebateInfo');
 var Debater = require('../components/debater');
 var VotePro = require('../components/votepro');
 var VoteCon = require('../components/votecon');
+var Tooltip = require('../components/tooltip');
 
 // var serverURL = "http://localhost:3000";
 
@@ -122,7 +123,7 @@ var Debate = React.createClass({
     	var first = self.state.firstVote;
         socket.emit('vote', {selections: selections, first: first, id: id},function(){
 
-        	
+
         var voted = self.state.firstVote;
         voted[parseInt(id)] = false;
 
@@ -134,22 +135,29 @@ var Debate = React.createClass({
             firstVote: voted
         });
 
-        console.log("afterchange",self.state.firstVote);
         });
 
         
     },
 	render:function(){
 		return(
-				  <div>
+			<div>
                <div className="debate-title"><h1>{this.props.debateSettings.topic}</h1></div>
                 <DebateInfo roundTimeLeft = {this.state.roundTimeLeft} startDebate = {this.startDebate} timeUntilNextRound = {this.state.timeUntilNextRound} round = {this.state.round} event ={this.state.event}/>
-              <div className="debate row">
-                <div className="debater con col-md-5 col-md-offset-1 text-center">
+              <div className="row text-center">
+              	 <div className="col-md-6 text-center">
+              	 	<Tooltip details={this.props.con}/>
+              	 </div>
+              	 <div className="col-md-6 text-center">
+              	 	<Tooltip details={this.props.pro}/>
+              	 </div>
+              </div>
+              <div className="debate debating row">
+                <div className="debater con col-md-6 text-center">
                     <Debater name={this.props.con.name} side={this.props.con.side} index="1" location={this.props.con.location} level={this.props.con.level} followers={this.props.con.followers} currentDebater = {this.state.debater}/>
                     <VoteCon id = "1" selected={this.state.selections[1]} onToggle={this.onChildToggle} /> 
                 </div>
-                <div className="debater pro col-md-5 col-md-offset-1 text-center">
+                <div className="debater pro col-md-6 text-center">
                     <Debater name={this.props.pro.name} side={this.props.pro.side} index="0" location={this.props.pro.location} level={this.props.pro.level} followers={this.props.pro.followers} currentDebater = {this.state.debater}/>
                     <VotePro id = "0" selected={this.state.selections[0]} onToggle={this.onChildToggle}/>
                 </div>

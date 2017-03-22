@@ -45,33 +45,23 @@ var Debater = React.createClass({
         currentlyDebating = false
       }
       if(currentlyDebating){
-        videoWidth = 250
+        videoWidth = 260
       }
       else if (nobodyDebating){
-        videoWidth = 180
+        videoWidth = 230
       }
       else {
-        videoWidth = 150
+        videoWidth = 200
       }
         return(
             <div>
               <div className="debater-info">
-                <div className="tooltip-container">
-                  <div className="debater-name-side">
-                    <a className="debater-name">{this.props.name}</a>
-                    <span className="debater-side">{this.props.side}</span>
-                      <div className="name-tooltip">
-                        <p><i className="fa fa-globe icon" aria-hidden="true">{this.props.location}</i></p>
-                        <p><i className="fa fa-certificate icon" aria-hidden="true"></i>{this.props.level}</p>
-                        <p><i className="fa fa-users icon" aria-hidden="true">{this.props.followers}</i></p>
-                      </div>
-                  </div>
-                </div>
                 <div className="debater-follow-btn" key ={this.props.index} onClick={this.follow}>{this.state.follow[this.props.index]}</div>
               </div>
+              <div className="voting">
+                <div className="vote-bar"><span className="vote-percent"></span><div className={"vote-bar-fill-"+this.props.side} style={{height: this.state.percent[parseInt(this.props.index)]+"%"}}>{parseInt(this.state.percent[parseInt(this.props.index)])+"%"}</div></div>
+              </div>
               <div className="debater-video">
-
-                 <div className="vote-bar"><span className="vote-percent"></span><div className="vote-bar-fill" style={{height: this.state.percent[parseInt(this.props.index)]+"%"}}></div></div>
                     {this.props.side =="con" ? <DebaterVideoCon videoWidth ={videoWidth}/> :<DebaterVideoPro videoWidth = {videoWidth} /> }
                 
                   {/*<img style={{width: videoWidth + "px"}} src={"assets/placeholder/"+this.props.side+"-debater.png"} alt=""></img>*/}

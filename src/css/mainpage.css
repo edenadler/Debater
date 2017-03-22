@@ -8,7 +8,7 @@
 	background: none;
 }
 .logo img{
-	width: 200px;
+	width: 300px;
 	display: inline-block;
 	background: none;
 }
@@ -23,7 +23,7 @@
 	width: 640px;
 	height: 75px;
 	display: inline-block;
-	background: #F2F2F2;
+	background: #eaeaea;
 	padding: 10px;
 
 }
