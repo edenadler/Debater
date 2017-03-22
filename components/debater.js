@@ -34,7 +34,7 @@ var Debater = React.createClass({
       var percentage = this.state.percent + '%';
       var currentlyDebating = false;
       var nobodyDebating = false
-      var videoWidth = 150;
+      var videoWidth = 180;
       if(this.props.currentDebater == this.props.side){
         currentlyDebating = true
       }
@@ -51,7 +51,7 @@ var Debater = React.createClass({
         videoWidth = 250
       }
       else {
-        videoWidth = 250
+        videoWidth = 180
       }
         return(
             <div>

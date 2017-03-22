@@ -184,7 +184,7 @@ main{
   	flex-direction: row;
   	align-items: flex-end;
   	justify-content: space-between;
-  	margin-top: -40px;
+  	margin-top: -30px;
   	margin-bottom: 10px;
   	transition: all ease-in-out 0.7s;
   	z-index: 22;
@@ -289,6 +289,9 @@ main{
  	align-items: center;
  	justify-content: space-around;
  	position: relative;
+ 	margin-top: 10px;
+ 	 	 	transition: all 0.5s ease-in-out
+
  }
 /* .debater-video img{
  	transition: all 0.5s ease-in-out
@@ -361,8 +364,9 @@ main{
 */	
 	font-size: 30px;
 	transition: all 0.2s ease-in-out;
-	margin-top:20px;
+	margin-top:30px;
 	background: inherit
+
 
 }
 .vote-btn:hover{
@@ -441,6 +445,9 @@ input[type=submit]:hover{
     margin: 0;
     resize: none;
     margin-top: 20px;
+    border: solid 2px #4922c4;
+    padding-left: 10px;
+    padding-top: 5px;
 }
 /*********************HOMEPAGE*************************/
 

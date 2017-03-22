@@ -29,7 +29,19 @@ var Debate = React.createClass({
 		var self = this;
 		socket.on('start debate', function(){
 		var countDown = setInterval(function(){self.tick(countDown)}, 1000);
-		})
+		});
+		socket.on('voted', function(message){
+			console.log("yo");
+	        var voted = self.state.firstVote;
+	        voted[parseInt(message.id)] = false;
+	        console.log("voted",voted);
+
+	        self.setState({
+	            firstVote: voted
+	        });
+
+        console.log("finished",self.state.firstVote);
+      });
 	},
 	startDebate: function(e){
 		var socket = io.connect();
@@ -115,6 +127,8 @@ var Debate = React.createClass({
             selections[1] = !selected;
           }
           else if (id == 1){
+          	console.log("con voted");
+          	console.log(selected)
             selections[1] = selected;
             selections[0] = !selected;
           }
@@ -122,19 +136,10 @@ var Debate = React.createClass({
     	var first = self.state.firstVote;
         socket.emit('vote', {selections: selections, first: first, id: id});
         	console.log("finished voting");
+		this.setState({
+			selections:selections
+		})
 
-		socket.on('voted', function(){
-	        var voted = self.state.firstVote;
-	        voted[parseInt(id)] = false;
-	        console.log("voted",voted);
-
-	        self.setState({
-	            selections: selections,
-	            firstVote: voted
-	        });
-
-        console.log("finished",self.state.firstVote);
-      });
 
         
     },

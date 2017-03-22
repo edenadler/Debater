@@ -62,7 +62,7 @@ sendMessage: function(event){
 	var messageText = $(".chat textarea").val();
 	var message = {
 		text:messageText,
-		author: "Eden",
+		author: "Demo",
 		likes:0,
 		liked:false
 	}
