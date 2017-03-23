@@ -451,20 +451,3 @@ input[type=submit]:hover{
 }
 /*********************HOMEPAGE*************************/
 
-.main-debates{
-	height: 35px;
-	width: 150px;
-	padding: 4px;
-	border: 3px solid #ED8F85;
-	color: #ED8F85;
-	margin: 0 auto;
-}
-
-.main-debaters{
-	height: 35px;
-	width: 150px;
-	padding: 4px;
-	margin: 0 auto;
-	color: #36C0A2;
-	border: 3px solid #36C0A2;
-}

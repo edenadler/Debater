@@ -34,7 +34,7 @@ var round5={
 	event:"Questions"
 };
 var debateSettings = {
-	rounds:[round1,round2,round3],
+	rounds:[round1,round2,round3,round4,round5],
 	topic: "SHOULD YOU HIRE A JUNIOR DEVELOPER?",
 	
 };
