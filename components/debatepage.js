@@ -21,10 +21,21 @@ var round3={
 	time:4,
 	event:"Conclusion"
 };
-
+var round4={
+	round: 4,
+	name:"Round 4",
+	time:4,
+	event:"Wrap up"
+};
+var round5={
+	round: 5,
+	name:"Round 4",
+	time:4,
+	event:"Questions"
+};
 var debateSettings = {
 	rounds:[round1,round2,round3],
-	topic: "SHOULD YOU HIRE JUNIOR DEVELOPERS?",
+	topic: "SHOULD YOU HIRE A JUNIOR DEVELOPER?",
 	
 };
 
