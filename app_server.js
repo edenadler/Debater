@@ -17,6 +17,9 @@ var io = require('socket.io').listen(server);
 app.get('/', function (req, res) {
   res.sendFile(__dirname+'/src/index.html');
 });
+app.get('/demo', function (req, res) {
+  res.sendFile(__dirname+'/src/demo.html');
+});
 
 
 var voteTally = [0,0];
@@ -31,10 +34,15 @@ var calculatePercentage = function(a,b,id){
 
 
 io.on('connection', function(socket) {
+	io.emit('event', "hello")
 	socket.on('start debate', function(){
 		io.emit('start debate');
 	}); 
+	socket.on('test', function(message){
+		console.log(message)
+	});
 	socket.on('chat message', function(message){
+		console.log(message)
 		io.emit('chat message', message);
 	}); 
 	socket.on('like update', function(messages){
@@ -44,7 +52,7 @@ io.on('connection', function(socket) {
 		io.emit('top comment', message);
 	});    
 	socket.on('vote', function(message){
-		console.log(message.selections);
+		console.log(message);
 		message.id = parseInt(message.id);
 		if (message.selections[0] === true){
 			voteTally[0] += 1;

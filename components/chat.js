@@ -122,7 +122,7 @@ var Chatfeed = React.createClass({
 		})
 		return(
 			<div>
-			<h3>Free Chat</h3>
+			<h3>Chat</h3>
 			<div className="messages" id = "test">
 
 			{ messages_list }

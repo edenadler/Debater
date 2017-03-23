@@ -1,0 +1,68 @@
+body{
+	font-family: 'Franklin-Gothic';
+	text-transform: uppercase;
+}
+.logo img{
+	width: 280px;
+}
+.logo{
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+.con{
+	background: #DE3220
+}
+.pro{
+	background: #36C0A2
+}
+h3{
+	font-size: 18px;
+	margin-top: 10px;
+}
+.vote-btn{
+	background: inherit;
+	border:3px solid white;
+	font-size: 26px;
+	color: white;
+	width: 150px;
+	margin: 0 auto;
+}
+.vote-btn:hover{
+	background: rgba(201, 201, 201, 0.56);
+}
+.vote{
+	padding-top: 20px;
+	padding-bottom: 30px;
+}
+.chat{
+	margin-top: 30px;
+}
+textarea{
+width: 80%;
+    height: 50px;
+    padding-right: 25px;
+    resize: none;    
+    border: solid 2px #4922c4;
+    padding-left: 10px;
+    padding-top: 5px;
+    margin: 0 auto;
+    margin-top: 20px;
+    display: block;
+}
+input[type=submit] {
+    padding:5px 40px; 
+    background:#ccc; 
+    border:0 none;
+    cursor:pointer;
+    -webkit-border-radius: 5px;
+	border-radius: 2px;
+	background-image: linear-gradient(to left, #422898, #4922c4);
+	color: white;
+	margin-top: 10px;
+	font-size: 20px;
+
+}
+.look{
+	display: none;
+}
