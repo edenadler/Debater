@@ -3,7 +3,7 @@ var socketIO = require('socket.io');
 var path = require('path');
 var http = require('http');
 var PORT = process.env.PORT || 3000;
-var INDEX = path.join(__dirname, '/src/index.html');
+// var INDEX = path.join(__dirname, '/src/index.html');
 
 var app = express();
  
