@@ -69,7 +69,8 @@ input[type=submit] {
 footer{
 	font-family: 'Open Sans';
 	margin-top:50px;
-	text-transform: none
+	text-transform: none;
+	margin-bottom:20px
 }
 a{
 	color:#422898;
