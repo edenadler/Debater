@@ -31,9 +31,16 @@ h3{
 .vote-btn:hover{
 	background: rgba(201, 201, 201, 0.56);
 }
+.vote-btn:active{
+	background: rgba(201, 201, 201, 0.56);
+}
+.vote-btn:focus{
+	background: rgba(201, 201, 201, 0.56);
+}
 .vote{
 	padding-top: 20px;
 	padding-bottom: 30px;
+	height: 160px;
 }
 .chat{
 	margin-top: 30px;
