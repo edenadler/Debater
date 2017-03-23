@@ -20,7 +20,7 @@ var DebateInfo = React.createClass({
 var Viewers = React.createClass({
 	render:function(){
 		return(
-			<div className="viewers">4000 viewers</div>
+			<div className="viewers">790 viewers</div>
 			)
 	
 	}
