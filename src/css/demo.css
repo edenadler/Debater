@@ -66,3 +66,11 @@ input[type=submit] {
 .look{
 	display: none;
 }
+footer{
+	font-family: 'Open Sans';
+	margin-top:70px;
+	text-transform: none
+}
+a{
+	color:#422898;
+}
