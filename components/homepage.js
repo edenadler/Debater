@@ -61,7 +61,7 @@ var HomePage = React.createClass({
 		</div>
 		<div className="card-container col-md-3">
 		<div className="debate-card" onClick = {this.props.handleClickedProjectItem}>
-			<div className="debate-topic">Trump\'s ban is justified</div>
+			<div className="debate-topic">Trump/'s ban is justified</div>
 			<div className="debate-card-info">
 				<span>2034 viewers</span><br />
 				<span>Four days ago</span>
